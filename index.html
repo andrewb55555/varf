@@ -1,0 +1,77 @@
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<title class="head">Vertigo Assessment & Referral Form</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.head > tbody > tr > td {
+	width: 33.333%;
+}
+
+.main > tbody > tr > td {
+	width: 50%;
+}
+
+th, td:nth-child(even) {
+  text-align: left;
+  padding: 8px;
+}
+
+td:nth-child(odd) {
+  text-align: right;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #c8d3e6;}
+</style>
+
+<script src="jsencrypt.min.js"></script> 
+<script src="varf.js"></script> 
+
+</head>
+<body>
+
+<table class="head"><tr><td>
+<img src="RPA_HOSPLOGO.JPG" alt="Royal Prince Alfred Hospital" style="float:left;width:70px;height:100px;">
+</td>
+<td>
+<center><h2>Vertigo Assessment & Referral Form</h2></center>
+</td>
+<td>
+Institute of Clinical Neurosciences
+<br>Royal Prince Alfred Hospital
+<br>Camperdown NSW Australia 2050
+<br>Tel: +61 2 80045350 Fax: +61 2 95158347
+</td>
+</tr>
+</table>
+
+<button onclick="commit()">Submit Form</button>
+<button onclick="reset()">Reset Form</button>
+
+<form id="varf_form">
+
+<table class="main"><tbody id="main_body">
+
+</tbody></table>
+
+<script>
+document_ready()
+</script>
+
+</form>
+
+<button onclick="commit()">Submit Form</button> 
+<button onclick="reset()">Reset Form</button> 
+
+</body>
+
