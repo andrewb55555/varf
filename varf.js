@@ -1,15 +1,28 @@
-var version = 3;
+var version = 4;
 
-var plans = ['Review when symptomatic','Initiation of low salt diet, duretics, betahistine','Intra tympanic steroids / gentamicin','Initiation of migrane preventative therapy','Increase in hydration','Calf and thigh strengthening exercises','Cognitive behavioral therapy','Urgent imaging and followup','Referral to ophthalmologist for examination for stigmata of autoimmune inner ear disease','Referral to balance rehebilitation','Anti-platelet therapy','Cholesterol lowering medication','Regular GP review for risk factor optimisation: monthly BP check, six monthly fasting lipids and BSL','No further intervention is required','Surgical review','Assessment on the Epley Omniax Rotater for BPV','Vestibular function tests and further follow up','Follow up as required only','Referral for cardiology review inclusive of echocardiography','Referral to physio for exercises to treat head-motion intolerance.','Self directed balance rehabilitation','Sleep study for investigation of possible sleep apnoea.','Training in Home Epley Manoeuvre','Home Video Oculography','Desensitisation exercises for head motion intolerance','Discharge from clinic','Trial of Cinnarizine for vestibular symptoms','Otolaryngology Assessment','Electrocochleography','Non-manipulative Neck Physical Therapy (On Balance Rehab)','Increase dietary salt and water','Neurosurgical reviw','Sleep study'];
-
-var diagnoses = ['atypical positing nystagmus','autoimmune disease','Autoimmune inner ear disease (AIIED)','baroreceptor failure','bilateral vestibular loss','bpv','brainstem stroke','Brainstem Tumour','cardiac rhythm disturbance','central vertigo','central vertigo','Cerebellar Ataxia','clinically definite vestibular migraine','clinically probable vestibular migraine','cochlear implant assesment','delayed endolymphatic hydrops','extra pyramidal syndrome','Head Motion Intolerance','Labyrinthitis','meniere\'s disease','migraine','motion sensitivity','Near dehiscence','No abnormality detected','non-specic imbalance','optic neuritis','other','Paraneoplastic syndrome','peripheral neuropathy','posterior circulation ischaemia','postural hypotension','psychophysical vertigo','spinal cord pathology','superior canal dehiscence','TMJ Arthritis','unilateral vestibular loss','unilateral vestibulopathy','Unknown','vestibular neuritis','vestibular paroxysmia','vestibular schwannoma','Visual vertigo'];
-
-var morbidities = ['Acute Lymphocytic Leukaemia','Acute Myeloid Leukaemia','Acute Renal Failure','Addison\'s Disease','Adenoma','Alcoholic Cerebellar Degeneration','Allergy','Alopecia','Alzheimer\'s Disease','Amnesia','Anaemia','Anal Fissure','Anastomosis','Aneurysm','Angina pectoris','Anosmia','Antiphospholipid antibody syndrome','Anxiety','Aortic Incompetence','Aortic Stenosis','Appendiceal carcinoma','Arteriovenous malformation','Arteriovenous malformation','Arteritis','Arthritis','Asbestosis','Aspergillosis','asthma','Asthma','atrial fibrillation','Atrial Fibrillation','Atrial septal defect','Atrocytoma','Attention deficit disorder','Attention deficit hyperactivity disorder','Atypical Facial Pain','Autoimmune inner ear disease','Autonomic Neuropathy','Back pain','Barrett\'s Oesophagus','Basal Cell Carcinoma','Bell\'s Palsy','Benign Essential Tremor','Benign Positional Vertigo','Benign prostatic hypertrophy','Benign Tumour','beta thalassaemia','bilateral hearing loss','Bilateral Vestibular Loss','Bipolar Disorder','Blepharospasm','Bowel Carcinoma','Bowel obstruction','Brachial neuritis','bradycardia','brain neoplasm','Breast Cancer','Breast Carcinoma','Bronchiectasis','Bronchitis','Bulimia','Bursitis','CANVAS','carcinoma (other)','Cardiac Failure','Cardiac Rhythm Disturbance','Cardiomegaly','Cardiomyopathy','Carpal Tunnel Syndrome','Cataracts','cataracts','Cavernoma','Cavernous Sinus Syndrome','cellulitis','cerebellar ataxia','Cerebellar Ataxia','Cerebellar atrophy','Cerebellopontine Ependymoma','Cerebral Palsy','Cerebrovascular Disease','Cervical Canal Stenosis','Cervical Carcinoma','Cervical disc protrusion','Cervical myeopathy','Cervical spondylosis','Charcot-Marie-Tooth Disease','Chiari  Malformation','Cholecystitis','Cholelithiasis','Cholera','Cholesteatoma','Chorioretitinitis','chronic airflow limitation','Chronic Airflow Limitation','Chronic Bronchitis','Chronic Fatigue Syndrome','Chronic Inflammatory Demyelinating Polyneuropathy','Chronic Lymphocytic Leukaemia','chronic lymphocytic leukaemia','Chronic Myeloid Leukaemia','Chronic Renal Failure','Chronic Renal Impairment','Claudication','cochlear implant','Coeliac Disease','Cogan\'s syndrome','Cognitive impairment','Cold agglutin disease','colonic carcinoma','Congestive Cardiac Failure','Conn\'s syndrome','Constipation','Corneal Dystrophy','Coronary','Coronary artery disease','Coronary Bypass','Corpus Collosum Lipoma','Corticobasal Degeneration','Craniosynostosis','CREST syndrome','Creutzfeld Jakob Disease','Crohn\'s Disease','Crowned Dens Syndrome','Current Smoker','currently Pregnant','Cushing\'s Syndrome','Cystic Fibrosis','Deep Vein Thrombosis','Deep Venous Thrombosis','Dementia','Demyelinating disease','Depression','Dercum\'s disease','Dermatomyositis','Diabetes Mellitus','Diaphragmic palsy','diplopia','Discitis','Discitis','Disectomy','Diverticular Disease','Down\'s Syndrome','Duane\'s syndrome','Dupuytens contracture','Dysarthria','dyslexia','Dystonia','Ear Infection','Eczema','Ehlers Danlos Syndrome','Emphysema','Encephalitis','Endometrial carcinoma','Endometriosis','Endometrosis','Epilepsy','Essential Tremor','Ex Smoker','Facial myokymia','facial neuroma','Familial Hemiplegic Migraine','Family History of Heart Disease','Fatty Liver','Fibroadenoma','Fibromyalgia','Fibrosarcoma','Follicular Keratodermatitis','Food Poisoning','Frontotemporal Dementia','G6PD deficiency','gall bladder dysfunction','Gastric Carcinoma','gastro oesophageal reflux','Gastro Oesophageal Reflux Disease','gastroenteritis','Generalised Epilepsy','gestational diabetes','Glandular fever','glaucoma','Glaucoma','Glioblastoma','Glioma','Glomerulornephritis','Glucose Intolerance','Goitre','gout','Gout','Grave\'s Disease','grommets','Guillain-Barre Syndrome','Haemachromatosis','Haemachromatosis','Haemangioma','Haemophilia','Haemothorax','Haemotympanum','Hashimoto\'s Thyroditis','Hay Fever','Headache non-specific','Heavy Ethanol Consumption','Helicobacter Pylori','Hepatic carcinoma','Hepatic Cirrhosis','hepatic cirrhosis','Hepatitis','hepatitis','Hepatitis C','Hernia','Herpes Simplex Virus','Hip dysplasia','Hip Replacement','Histodelia','HIV','Hodgkin\'s Lymphoma','Horner\'s syndrome','Huntington\'s Disease','hydrocephalus','hyper prostatism','Hypercholesterolaemia','hyperhidrosis','Hyperlipidaemia','Hyperparathyroidism','Hyperprostatism','Hypertension','Hyperthyrodism','Hyperthyroidism','Hypertrophic Obstructive Cardiomyopathy','hyperuricemia','Hypogammaglobulinaemia','Hypoglycaemia','Hypokalaemia','hyponatraemia','Hypoparathyroidism','Hypopituitarism','hypotension','Hypotension','Hypothyroidism','Hypotonia','Hysterectomy','IGg4 Systemic Disease','Implanted Defibrillator','inflammatory bowel disease','Inflammatory Bowel Disease','Insomnia','Insulin Resistance','Interstitial Lung Disease','Iron Deficiency','iron deficiency','Irritable Bowel Syndrome','Irritable Bowel Syndrome','Ischaemic Heart Disease','Kidney Stones','Knee pain','Knee Replacement','kyphoscoliosis','Labyrinthitis','Lactose Intolerance','large vestibular aqueduct syndrome','Laryngeal dystonia','Laryngeal dystonia','Laryngeal nodule','Leukaemia','Lewy Body Dementia','lipomatosis','Low blood pressure','Lumbar Canal Stenosis','Lumbar Disc Pathology','Lung Cancer','Lupus','Lyme Disease','Lymphedema','Lymphoma','Macular Degeneration','Mal de Debarquement','Malaria','Malignant Melanoma','Marfan\'s Syndrome','Mastitis','Mastoid effusion','Mastoidectomy','Mastoiditis','Medullary sponge kidney','Medulloblastoma','melanoma','Melatonin','Meniere\'s Disease','Meningioma','Meningioma','Meningitis','meniscal tear','Menorrhagia','Merrnohagia','Mesothelioma','MGUS','Migraine with family history','Migraine without family history','Miller Fisher Syndrome','Mitral Incompetence','Mitral Stenosis','Mitral valve disease','Mitral Valve Prolapse','Mixed Connective Tissue Disease','Motor Neurone Disease','Multiple Endocrine Neoplasia','Multiple pulmonary emboli','Multiple Sclerosis','Multisystem Atrophy','Mumps','Myasthenia Gravis','Mycolonus','Myelodysplasia','myeloproliferative disorder','Myocardial Infarction','Myopathy','Myotonia Dystrophica','Narcolepsy','Nasal Congestion','Nasopharyngeal carcinoma','Neck Pain','Nephrolithiasis','neurofibromatosis','neurolabyrinthitis','neutropenia','Nocturnal Hyperhidrosis','non-Hodgekins lymphoma','Non-Hodgkin\'s Lymphoma','Norrie syndrome','Obesity','Obsessive compulsive disorder','obstructive sleep apnoea','Obstructive Sleep Aponea','Ocular toxoplasmosis','Oesophageal Carcinoma','Oesophagitis','Oligoarthritis','Optic Neuritis','optic neuropathy','orthosclerosis','oscillopsia','Osteoarthritis','Osteogenesis imperfecta','Osteomalacea','Osteomyelitis','Osteomyelitis','Osteopenia','Osteoporosis','osteoporosis','Other','Otitis Externa','Otitis Media','Otosclerosis','Ovarian cancer','ovarian cysts','Paget\'s disease','Pancreatitis','Papillary carcinoma','Paraesthesia','paraneoplastic syndrome','Paraneoplastic Syndrome','Parasthesia','Parathyroidectomy','Parkinson\'s Disease','Parkinsonism','Paroxymal AF','Partial Epilepsy','Patulous Eustachian Tube','pe','Peptic Ulcer','Perianal fistula','pericardial effusion','Pericarditis','Peripheral Neuropathy','Peripheral Vascular Disease','Peritoneal cancer','Permanent Pacemaker','Permanent Pacemaker for rhythm disturbance','pernicious anaemia','Pes Cavus','pharyngeal carcinoma','Phrenic Nerve Palsy','pituitary adenoma','Pleomorphic adenoma','Pleurisy','Pneumonia','Poliomyelitis','Polycystic Ovarian Syndrome','polycythaemia','Polycythaemia','Polymyalgia','Polymyositis','Polyps','Polyuria','Post Traumatic Stress Disorder','postural orthostatic tachycardia syndrome (POTS)','Pre eclampsia/eclampsia','Progressive Supranuclear Palsy','Prolactinoma','prolapsed rectum','Prostate Carcinoma','prostate carcinoma','Prostatic Hypertrophy','Prostatitis','Prostatitis','Pseudo exfoliation syndrome','Pseudogout','Pseudohypoparathyroidism','Psoriasis','Psoriatic Arthritis','Psychosis','Ptosis','Pulmonary Emboli','Pulmonary Embolus','Pulmonary Fibrosis','pulmonary fibrosis','Pulmonary Hypertension','QT Syndrome','Radiculopathy','Ramsay Hunt Syndrome','Raynaud\'s phenomenon','Rectal Adenocarcinoma','Rectocele','Recurrent Miscarriages','Refsum\'s Disease','Renal Artery Stenosis','Renal Calculi','Renal Cell Carcinoma','Renal disease','Respiratory Tract Infection','restless legs and burning toes','Restless Legs Syndrome','Restrictive lung disease','Restrictive strain injury','Retinal Detachment','Retinitis Pigmentosa','rheumatic fever','Rheumatic Heart Disease','rheumatoid arthritis','Rheumatoid Arthritis','Rhinitis','Rosacea','Ross River virus','Rubella','Salmonella','Sarcoidosis','Scheuermann\'s disease','schizophrenia','Schwannoma','Schwannoma, Surgery','Sciatica','Scleroderma','Scoliosis','seizures','Sensorineural hearing loss','Septal defect','Seronegative Arthritis','Shingles','Shoulder Replacement','Sick Sinus Syndrome','Sickle Cell Anaemia','silicosis','Sinus Dysrhthmia','Sinus meningioma','Sinusitis','Sjogren\'s Syndrome','Spina Bifilda Oclta','Spinal Canal Stenosis','Spinal Claudication','Splenectomy','Spondylosis','Squamous Cell Carcinoma','Stapedectomy','Stiff Man\'s Syndrome','Still\'s disease','Stroke','Subarachnoid haemorrhage','Subdural haemorrhage','Sudden Sensorineural Hearing Loss','SUNCT Syndrome','superficial vein thrombosis','superior canal dehiscence','Supraventricular Tachycardia','supraventricular tachycardia','Surgery','Sweet\'s syndrome','Syncope','Syphilis','Systemic Lupus Erythematosis','tachycardia','Tarsal tunnel release','Tendonitis','Tensillomegaly','Tension Headache','Testicular cancer','Thalassaemia Trait','Thrombocythaemia','Thyroid Cancer','thyroid carcinoma','Thyroid Disease','Thyroid nodules','Thyrotoxicosis','TMJ Dysfunction','Tonsillitis','Tracheo-oesophageal fistula','Transitional Cell Carcinoma','Trauma','Trigeminal Neuralgia','Trismus','Tuberculosis','Tubular Adenoma','Tubulovullious Adenoma','Turner\'s Syndrome','tympanic membrane perfusion','tympanoplasty','Typhus','Ulcerative Colitis','Uncompensated Vestibular Loss','Unilateral Hearing  Loss','Unilateral Vestibular Loss','ureteric neoplasm','Urinary Tract Infection','Urosepsis','Urticaria','Uterine Carcinoma','Uterine Prolapse','Valvular Heart Disease','Valvular Heart Disease','Varicocoele','Vascular Dementia','Velocardio facial syndrome','venous sinus thrombosis','Ventricular Fibrillation','ventricular tachycardia','Vestibular aqueduct syndrome','Vestibular Migraine','Vestibular Neuritis','Vestibular Neuropathy','visual impairment','Vitamin B12 Deficiency','Vitamin D Deficiency','Vitiligo','Vitiligo','Vitreous Detachment','Wegener\'s Granulomatosis','White Matter Hyperintensities','White Matter Ischaemia','Whooping Cough']
-
-
-
+var nystagmus_list = ['no nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)'];
+var direction_list = ['up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
 
 var fields = {};
+
+fields['state'] = 		{ label: "Postictal State", 	type: "radio"};
+fields['state'].array = ['Ictal','Interictal'];
+
+fields['state_gp'] = 		{ label: "Performed when", 	type: "radio"};
+fields['state_gp'].array = ['Sympomatic','Asymptomatic'];
+
+fields['location'] = 		{ label: "Where is the questionaire conducted", 	type: "radio"};
+fields['location'].array = ['General Practice','ER','Ward','Neurology','Speciality Clinic'];
+fields['location'].other = true;
+
+fields['conducted'] = 	{ label: "Conducted By", 				type: "text"};
+
+fields['designation'] = 		{ label: "Specialty", 	type: "radio"};
+fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist'];
+fields['designation'].other = true;
+
+fields['blood_pressure'] = 		{ label: "Blood Pressure", 	type: "bpressure"};
+
 fields['pd_head'] = 		{ label: "Patient Details", 	type: "heading"};
 fields['hist_head'] = 		{ label: "Patient History", 	type: "heading"};
 fields['mrn'] = 	{ label: "MRN", 				type: "text"};
@@ -17,12 +30,16 @@ fields['gname'] = 	{ label: "Given Name(s)", 		type: "text"};
 fields['sname'] = 	{ label: "Surname", 			type: "text"};
 fields['dob'] = 	{ label: "Date of Birth", 		type: "date"};
 fields['adate'] = 	{ label: "Assessment Date", 	type: "date"};
+fields['adate'].today = true;
 fields['gender'] = 	{ label: "Gender", 				type: "radio"};
 fields['gender'].array = ['Male','Female'];
 fields['urgent'] = 	{ label: "Referral Urgency", 	type: "radio"};
 fields['urgent'].array = ['routine','semi-urgent (2 weeks)','urgent (1 week)'];
 
-fields['complaint'] = 	{ label: "Presenting Complaint", 			type: "textarea"};
+fields['complaint'] = 	{ label: "Presenting Complaint", 			type: "checkbox"};
+fields['complaint'].array = ['Vertigo','Imbalance','Lightheadedness','Frequent Falls','Sudden Hearing Loss'];
+fields['complaint'].other = true;
+fields['complaint'].otherLarge = true;
 
 
 fields['context'] = { label: "Context in which current vertigo occurs", 	type: "checkbox"};
@@ -35,8 +52,11 @@ fields['context'].array = [
 	'standing from sitting',
 	'walking',
 	'in the supermarket',
+	'in bed',
 	'sitting quietly',
 	'working at computer or watching TV'];
+
+
 
 fields['onset'] = 	{ label: "Vertigo Onset", 			type: "numeric_dd"};
 fields['onset'].array = ['hours ago','days ago','months ago','years ago'];
@@ -45,7 +65,7 @@ fields['no_episodes'] = 	{ label: "Number of previous episodes", 				type: "radi
 fields['no_episodes'].array = ['none','1-5','6-25','26+'];
 
 fields['freq_episodes'] = 	{ label: "Frequency of Episodes", 				type: "radio"};
-fields['freq_episodes'].array = ['several times a day','several times a week','several times a month','several times a year','rare','unpredictable','present all the time'];
+fields['freq_episodes'].array = ['several times a day','several times a week','several times a month','several times a year','rare','unpredictable','present all the time','n/a'];
 
 
 fields['increasing_freq'] = 	{ label: "Increasing frequency or severity in the last month", 				type: "radio"};
@@ -57,24 +77,34 @@ fields['vertigo_type'].array = ['spontaneous','positional'];
 fields['vertigo_duration'] = 	{ label: "Vertigo Duration", 				type: "numeric_dd"};
 fields['vertigo_duration'].array = ['seconds','minutes','hours','days'];
 
-fields['hearing_loss'] = 	{ label: "Hearing Loss", 				type: "radio"};
+fields['hearing_loss'] = 	{ label: "Hearing Loss", 				type: "triple_radio"};
 fields['hearing_loss'].array = ['none','left','right','both'];
+fields['hearing_loss'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
+fields['hearing_loss'].array3 = ['new','pre-existing','unsure'];
 
-
-fields['tinnitus'] = 	{ label: "Tinnitus", 				type: "radio"};
+fields['tinnitus'] = 	{ label: "Tinnitus", 				type: "double_radio"};
 fields['tinnitus'].array = ['none','left','right','both'];
+fields['tinnitus'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
 
-fields['fullness'] = 	{ label: "Fullness", 				type: "radio"};
+fields['fullness'] = 	{ label: "Aural Fullness", 				type: "double_radio"};
 fields['fullness'].array = ['none','left','right','both'];
+fields['fullness'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
 
-fields['migraine'] = 	{ label: "Migraine Symptoms", 				type: "checkbox"};
-fields['migraine'].array = ['headache','visual aura','photophobia','phonophobia','motion sensitivity'];
+fields['migraine'] = 	{ label: "Migraine Symptoms", 				type: "cr_double"};
+fields['migraine'].array = ['none','headache','visual aura','photophobia','phonophobia','motion sensitivity'];
+fields['migraine'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
 
 fields['other_neuro_symptoms'] = 	{ label: "Other Neurological Symptoms", 				type: "checkbox"};
-fields['other_neuro_symptoms'].array = ['diplopia','dysarthria','weakness','numbness','hiccups','dysphonia'];
+fields['other_neuro_symptoms'].array = ['none','diplopia','weakness','numbness','hiccups','dysphonia','dysarthria','internuclear ophthalmoplegia (INO)'];
 
 fields['vascular_risk'] = 	{ label: "Vascular Risk Factors", 				type: "checkbox"};
-fields['vascular_risk'].array = ['DM','HTN','AF','dyslipidemia','smoker','family history'];
+fields['vascular_risk'].array = ['none','Diabetes Mellitus (DM)','Hypertension (HTN)','Atrial Fibrillation (AF)','Dyslipidemia','Smoker','Family History','Previous Stroke or Transient Ischaemic Attack (TIA)'];
+
+fields['horners'] = 	{ label: "Horners Syndrome", 				type: "radio"};
+fields['horners'].array = ['none','left','right'];
+
+fields['meds'] = 	{ label: "Medications", 				type: "textarea"};
+
 
 fields['vertigo_category'] = 	{ label: "Vertigo Category", 				type: "radio"};
 fields['vertigo_category'].array = ['acute vestibular syndrome','episodic positional vertigo','episodic spontaneous vertigo','chronic persistent dizziness','other'];
@@ -85,19 +115,59 @@ fields['examination'].array = [];
 fields['primary_nystagmus'] = 	{ label: "Primary Position Spontaneous Nystagmus", 				type: "radio"};
 fields['primary_nystagmus'].array = ['none','up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
 
+fields['primary_nystagmus_gp'] = 	{ label: "Nystagmus when looking straight ahead", 				type: "radio"};
+fields['primary_nystagmus_gp'].array = ['none','left-beating','right-beating','other'];
+fields['primary_nystagmus_gp'].other = true;
+
 fields['gaze_evoked'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
 fields['gaze_evoked'].array = ['none','unidirectional','bidirectional'];
 
-fields['rhallpike'] = 	{ label: "Right Hallpike Test", 			type: "nystagmus"};
-fields['lhallpike'] = 	{ label: "Left Hallpike Test", 			type: "nystagmus"};
+fields['gaze_evoked_gp'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
+fields['gaze_evoked_gp'].array = ['yes','no'];
+
+fields['rhallpike'] = 	{ label: "Right Hallpike Test", 			type: "rc_depend"};
+fields['rhallpike'].array = nystagmus_list;
+fields['rhallpike'].array2 = direction_list;
+
+fields['rhallpike_gp'] = 	{ label: "Right Hallpike Test", 			type: "radio"};
+fields['rhallpike_gp'].array = ['negative','positive'];
+
+fields['lhallpike'] = 	{ label: "Left Hallpike Test", 			type: "rc_depend"};
+fields['lhallpike'].array = nystagmus_list;
+fields['lhallpike'].array2 = direction_list;
+
+fields['lhallpike_gp'] = 	{ label: "Left Hallpike Test", 			type: "radio"};
+fields['lhallpike_gp'].array = ['negative','positive'];
+
+fields['hsaccades'] = 	{ label: "Horizontal Saccades", 			type: "radio"};
+fields['hsaccades'].array = ['Normal','Abnormal','other'];
+
+fields['vsaccades'] = 	{ label: "Vertical Saccades", 			type: "radio"};
+fields['vsaccades'].array = ['Normal','Abnormal','other'];
+
+fields['pursuit'] = 	{ label: "Smooth Pursuit", 			type: "radio"};
+fields['pursuit'].array = ['Normal','Saccadic','other'];
+
+fields['romberg'] = 	{ label: "Matted Romberg's Test", 			type: "radio"};
+fields['romberg'].array = ['Negative','Positive','Equivocal'];
+
+fields['unterberger'] = 	{ label: "Unterberger Test", 			type: "radio"};
+fields['unterberger'].array = ['Negative','Left Positive','Right Positive','Veers to both sides'];
+
+fields['tandem_gait'] = 	{ label: "Tandem Gait", 			type: "radio"};
+fields['tandem_gait'].array = ['Normal','Abnormal'];
 
 fields['hit'] = 	{ label: "Head Impulse Test", 				type: "radio"};
-fields['hit'].array = ['normal','left positive','right positive','both'];
+fields['hit'].array = ['normal','left positive','right positive','both positive'];
 
 fields['skew'] = 	{ label: "Skew", 				type: "radio"};
 fields['skew'].array = ['present','absent'];
 
-fields['cranial_nerve_signs'] = 	{ label: "Cranial Nerve Signs", 				type: "textarea"};
+fields['cranial_nerve_signs'] = 	{ label: "Cranial Nerve Signs", 				type: "checkbox"};
+fields['cranial_nerve_signs'].array = [];
+fields['cranial_nerve_signs'].other = true;
+
+fields['cranial_nerve_signs_gp'] = 	{ label: "Cranial Nerve Signs", 				type: "textarea"};
 
 fields['limb_larm'] = 	{ label: "Limb Power Left Arm", 				type: "radio"};
 fields['limb_larm'].array = ['no drift','drifts without reaching bed before 10 seconds','some effort against gravity','no effort against gravity','no movement','untestable'];
@@ -111,38 +181,123 @@ fields['limb_lleg'].array = ['no drift','drifts without reaching bed before 5 se
 fields['limb_rleg'] = 	{ label: "Limb Power Right Leg", 				type: "radio"};
 fields['limb_rleg'].array = ['no drift','drifts without reaching bed before 5 seconds','some effort against gravity','no effort against gravity','no movement','untestable'];
 
-fields['ataxia'] = 	{ label: "Ataxia", 				type: "checkbox"};
+fields['limb_larm_gp'] = 	{ label: "Left Arm Weakness", 				type: "radio"};
+fields['limb_larm_gp'].array = ['present','absent'];
+fields['limb_rarm_gp'] = 	{ label: "Right Arm Weakness", 				type: "radio"};
+fields['limb_rarm_gp'].array = ['present','absent'];
+fields['limb_lleg_gp'] = 	{ label: "Left Leg Weakness", 				type: "radio"};
+fields['limb_lleg_gp'].array = ['present','absent'];
+fields['limb_rleg_gp'] = 	{ label: "Right Leg Weakness", 				type: "radio"};
+fields['limb_rleg_gp'].array = ['present','absent'];
+
+fields['ataxia'] = 	{ label: "Limb Ataxia", 				type: "checkbox"};
 fields['ataxia'].array = ['none','left arm','right arm','left leg','right leg'];
 
 fields['sensory_loss'] = 	{ label: "Sensory Loss", 				type: "radio"};
-fields['sensory_loss'].array = ['none','left loss','left dense loss','right patchy loss','right dense loss'];
+fields['sensory_loss'].array = ['none','left loss','left dense loss','right patchy loss','right dense loss','not tested'];
+
+fields['sensory_loss_gp'] = 	{ label: "Sensory Loss", 				type: "textarea"};
+
 
 fields['morbid'] = 	{ label: "Morbidities", 			type: "mega"};
-fields['morbid'].array = morbidities;
+fields['morbid'].array = [];
+fields['morbid'].other = true;
+fields['morbid'].otherLarge = true;
 
-fields['impression'] = 	{ label: "Impression", 				type: "textarea"};
-fields['impression'].array = [];
+
+fields['gait'] = 	{ label: "Gait (Truncal Ataxia)", 				type: "radio"};
+fields['gait'].array = ['No ataxia','Grade 1 - mild to moderate imbalance with walking independently','Grade 2 - severe imbalance with standing, but cannot walk without support','Grade 3 - falling at upright posture'];
 
 fields['prelim_diagnosis'] = 	{ label: "Preliminary Diagnosis", 				type: "mega"};
-fields['prelim_diagnosis'].array = diagnoses;
+fields['prelim_diagnosis'].array = [];
+fields['prelim_diagnosis'].other = true;
 
 fields['final_diagnosis'] = 	{ label: "Final Diagnosis", 				type: "mega"};
-fields['final_diagnosis'].array = diagnoses;
+fields['final_diagnosis'].array = [];
+fields['final_diagnosis'].other = true;
 
 fields['plan'] = 	{ label: "Management Plan", 				type: "mega"};
-fields['plan'].array = plans;
+fields['plan'].array = [];
+fields['plan'].other = true;
 
+fields['plan_gp'] = 	{ label: "Management Plan", 				type: "textarea"};
 
-var ids = ['pd_head','adate','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','vertigo_category','prelim_diagnosis','examination','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hit','skew','cranial_nerve_signs','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','sensory_loss','morbid','impression','final_diagnosis','plan'];
+var currObj;
+
+var gp_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','horners','vascular_risk','morbid','meds','vertigo_category','examination','state_gp','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','cranial_nerve_signs_gp','limb_larm_gp','limb_rarm_gp','limb_lleg_gp','limb_rleg_gp','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+
+var er_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','horners','vascular_risk','morbid','vertigo_category','examination','state','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','cranial_nerve_signs','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+
+var full_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','horners','vascular_risk','morbid','meds','vertigo_category','examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','cranial_nerve_signs','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
+
+var ids = [];
+
+function read_html_list(id) {
+	var obj = document.getElementById(id);
+	var array = obj.innerHTML.split("\n");
+	
+	while (array[0] === "") { array.shift(); }
+	while (array[array.length - 1] === "") { array.pop(); }
+	
+	console.log("List: "  + id + " -> " + array.join(","));
+	
+	return array;
+}
+
+function prefill_today(id) {
+	let today = new Date().toISOString().substr(0, 10);
+	document.getElementById(id).value = today;
+}
+
+function parse_query_string(query) {
+  var dict = {};
+  var a = query.split("?");
+
+  if (a.length < 2) { return dict; }
+  var vars = a[1].split("&");
+  
+  for (var i = 0; i < vars.length; i++) {
+
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    dict[key] = value;
+  }
+  return dict;
+}
 
 function document_ready() {
+	var query = window.location.href.toString();
+	var qs = parse_query_string(query);
+	var type = qs['type'];
+	if (typeof type === 'undefine') { type = 'full'; }
+	switch(qs['type']) {
+		case 'er':
+			ids = er_ids;
+		break;
+		
+		case 'gp':
+			ids = gp_ids;
+		break;
+		
+		default:
+			ids = full_ids;
+	}
+	
+	fields['cranial_nerve_signs'].array = read_html_list("cranial_list");
+	fields['plan'].array = read_html_list("plans_list");
+	fields['morbid'].array = read_html_list("morbid_list");
+	fields['prelim_diagnosis'].array = read_html_list("preliminarysymptoms_list");
+	fields['final_diagnosis'].array = read_html_list("diagnosis_list");
+	
 	process_rows(ids);
-	console.log("YES " + ids.length );
+	console.log("YES " + ids.length);
 }
 
 function extract_values(ids) {
 	for (var i = 0 ; i < ids.length ; i++) {
 		var obj = fields[ids[i]];
+		currObj = obj;
 		console.log("extract_values: " + obj.id);
 		switch (obj.type) {
 			case 'date':
@@ -159,20 +314,36 @@ function extract_values(ids) {
 				obj.value = getNumericDropdownVal(obj.id);
 				break;
 
+			case 'bpressure':
+				obj.value = getBPVal(obj.id);
+				break;
+
 			case 'radio':
 				obj.value = getRadioVal(obj.id);
 				break;
+				
+			case 'double_radio':
+				obj.value = getDoubleRadioVal(obj.id);
+				break;
+				
+			case 'triple_radio':
+				obj.value = getTripleRadioVal(obj.id);
+				break;
+
+			case 'cr_double':
+				obj.value = getVal_cr_double(obj);
+				break;	
 				
 			case 'checkbox':
 				obj.value = getCheckboxVal(obj.id);
 				break;
 
-			case 'nystagmus':
-				obj.value = getNystagmusVal(obj.id);
+			case 'rc_depend':
+				obj.value = getVal_rc_double(obj);
 				break;
 				
 			case 'mega':
-				obj.value = bc_toString(document.getElementById(obj.id));
+				obj.value = getValue_mdd(obj.id);
 				break;
 				
 			default:
@@ -195,6 +366,7 @@ function process_rows(ids) {
 	for (var i = 0 ; i < ids.length ; i++) {
 		var obj = fields[ids[i]];
 		obj['id'] = ids[i];
+		currObj = obj;
 		var string = "";
 		console.log("process_rows: " + obj.id);
 		switch (obj.type) {
@@ -212,8 +384,12 @@ function process_rows(ids) {
 			
 			case 'heading':
 				string = html_head(obj);
-				break;
+				break; 
 				
+			case 'bpressure':
+				string = html_bpressure(obj);
+				break;
+								
 			case 'numeric_dd':
 				string = html_numeric_dd(obj);
 				break;
@@ -222,16 +398,28 @@ function process_rows(ids) {
 				string = html_radio(obj);
 				break;
 				
+			case 'cr_double':
+				string = html_cr_double(obj);
+				break;			
+
+			case 'double_radio':
+				string = html_double_radio(obj);
+				break;
+				
+			case 'triple_radio':
+				string = html_triple_radio(obj);
+				break;		
+				
 			case 'checkbox':
 				string = html_checkbox(obj);
 				break;
 
-			case 'nystagmus':
-				string = html_nystagmus(obj);
+			case 'rc_depend':
+				string = html_rc_depend(obj);
 				break;
 				
 			case 'mega':
-				string = html_mega(obj);
+				string = html_mdd(obj);
 				break;
 				
 			default:
@@ -239,7 +427,6 @@ function process_rows(ids) {
 		}
 		tbody.innerHTML += string + "\n\n";
 	}
-
 }
 
 function mytag(a,t) {
@@ -263,11 +450,19 @@ function html_head(obj) {
 }
 
 function html_text(obj) {
-	return html_row2(obj.label,'<input type="text" id="' + obj.id + '">');
+	return html_row2(obj.label,'<input type="text" style="width: 300px;"  id="' + obj.id + '">');
 }
 function html_textarea(obj) {
 	
-	return html_row2(obj.label,'<textarea id="' + obj.id + '" name="w3review" rows="4" cols="50"></textarea>');
+	return html_row2(obj.label,'<textarea id="' + obj.id + '" name="' + obj.id + '" rows="4" cols="50"></textarea>');
+}
+
+function html_bpressure(obj) {
+	var string = '<table><tbody><tr><td>Lying:</td><td><input type="number" id="' + obj.id + '-1"></td><td>/</td><td><input type="number" id="' + obj.id + '-2"></td></tr>';
+	string += '<tr><td>Standing:</td><td><input type="number" id="' + obj.id + '-3"></td><td>/</td><td><input type="number" id="' + obj.id + '-4"></td></tr>';
+	string += '</tbody></table>';
+	
+	return html_row2(obj.label,string);
 }
 
 function html_numeric_dd(obj) {
@@ -283,26 +478,105 @@ function html_numeric_dd(obj) {
 
 
 function html_date(obj) {
-	return html_row2(obj.label,'<input type="date" id="' + obj.id + '">');
+	var string = '<input type="date" id="' + obj.id + '">';
+	if (obj.today) {
+		 string += '<button type="button" onclick="prefill_today(\'' + obj.id + '\')">Today</button>';
+	}
+	return html_row2(obj.label,string);
 }
 
 function reset_mega(obj) {
-	var array = document.getElementsByClassName("megacheckboxlist");
+	var array = document.getElementsByClassName("mdd");
 	for (var i = 0 ; i < array.length ; i++) {
-		array[i].innerHTML = '';
+		rebuild_mdd(array[i].id);
 	}
 }
 
-function html_mega(obj) {
-
-	var string = '<div id="' + obj.id + '" class="megacheckbox"><select>';
-
+function html_mdd(obj) {
+  var string = '<div class="mdd" id="' + obj.id + '"><button type="button" onclick="toggle_mdd(\'' + obj.id + '\')" class="mdd_btn">Select</button><input type="text" placeholder="Search.." class="mdd-text" onkeyup="filter_mdd(\'' + obj.id + '\')" style="display:none"><div class="mdd-content" style="display:none">';
+  var obj_main = document.getElementById("main");
 	for (var i = 0 ; i < obj.array.length ; i++) {
-		string += '<option value=' + i + '>' + obj.array[i] + '</option>';
+		string += '<span class="fopt"><input type="checkbox" class="fopt_label" unchecked value="' + obj.array[i] + '">' + obj.array[i] + '</span>';
 	}
-	string += '</select><button type="button" onclick="bc_append(this)">&#8595; Add</button><div class="megacheckboxlist"></div></div>';
+	string += '</div><div class="mdd-display"></div>';
+	if (obj.other) { string += html_other_field(obj.id); }
+	string += '</div>';
+	//console.log(string);
 	
 	return html_row2(obj.label,string);
+}
+
+function toggle_mdd(id) {
+	var obj = document.getElementById(id);
+	var obj_dd 			= obj.getElementsByClassName("mdd-content")[0];
+	var obj_display 	= obj.getElementsByClassName("mdd-display")[0];
+	var obj_txt 		= obj.getElementsByClassName("mdd-text")[0];
+	var obj_btn 		= obj.getElementsByClassName("mdd_btn")[0];
+  if (obj_dd.style.display === "none") {
+	obj_dd.style.display = "block";
+	obj_txt.style.display = "block";
+	obj_display.style.display = "none";
+	obj_btn.innerHTML = 'Accept';
+  } else {
+	obj_dd.style.display = "none";
+	obj_display.style.display = "block";  
+	obj_txt.style.display = "none";
+	obj_btn.innerHTML = 'Select';
+	rebuild_mdd(id);
+  }
+}
+
+function getValue_mdd(id) {
+	var string = '';
+	var array = document.getElementById(id).getElementsByClassName("fopt_label");
+	for (var i = 0 ; i < array.length ; i++) {
+		if (array[i].checked) {
+			if (string === '') {
+				string += array[i].value;
+				console.log("***" + array[i].value);
+			} else {
+				string += ", " + array[i].value;
+			}
+		}
+	}
+	return string;
+}
+
+
+function rebuild_mdd(id) {
+	var obj = document.getElementById(id).getElementsByClassName("mdd-content")[0];
+	var obj_display = document.getElementById(id).getElementsByClassName("mdd-display")[0];
+	var string = '<ul>';
+	
+	var array = obj.getElementsByClassName("fopt_label");
+	for (var i = 0 ; i < array.length ; i++) {
+		if (array[i].checked) {
+			string += '<li>' + array[i].value + '</li>';
+		}
+	}
+	string += '</ul>';
+	obj_display.innerHTML = string;
+}
+
+function filter_mdd(id) {
+  console.log("filter");
+  var input, filter, ul, li, a, i;
+  var count = 0, limit = 5;
+  
+  input = document.getElementById(id).getElementsByClassName("mdd-text")[0];
+
+  filter = input.value.toUpperCase();
+  div =  document.getElementById(id).getElementsByClassName("mdd-content")[0];
+  a = div.getElementsByTagName("span");
+  for (i = 0; i < a.length; i++) {
+	txtValue = a[i].getElementsByTagName("input")[0].value;
+    if (txtValue.toUpperCase().indexOf(filter) > -1 && count < limit) {
+      a[i].style.display = "";
+	  count++;
+    } else {
+      a[i].style.display = "none";
+    }
+  }
 }
 
 function bc_append(obj) {
@@ -327,55 +601,102 @@ function bc_append(obj) {
 	return false;
 }
 
-
-function html_radio(obj) {
-	var string = '<div style="float:left;vertical-align:middle;">';
+function raw_checkbox(id,array,div_options,inc_other)
+{
+	var string = '<div id="' + id + '" ' + div_options + '>';
 	
-	if (typeof obj.array === "undefined") { obj.array = []; }
+	if (typeof array === "undefined") { array = []; }
+	if (id === "") { id = "checkbox"; }
 	
-	for (var i = 0 ; i < obj.array.length ; i++) {
-		string += '<input type="radio" id="' + obj.id + '-' + i + '" name="' + obj.id + '" value="' + obj.array[i] + '" >' + obj.array[i] + '<br>';
+	for (var i = 0 ; i < array.length ; i++) {
+		var subid = id + '-' + i;
+		if (i > 0) { string += '<br>'; }
+		string += '<input type="checkbox" onclick="nonefix(this)" name="' + id + '" id="' + subid +'" value="' + array[i] + '">';
+		string += '<label for="' + subid + '">' + array[i] + '</label>';
 	}
+	if (inc_other) { string += html_other_field(id); }
 	string += '</div>';
-	
-	return html_row2(obj.label,string);
-}
 
-function html_nystagmus(obj) {
-	var string = `<div style="float:left;vertical-align:middle;">
-<input type="radio" id="_ID_r-0" name="_ID_r" value="no nystagmus" onclick="noNystagmus('_ID_c');">no nystagmus<br>
-<input type="radio" id="_ID_r-1" name="_ID_r" value="paroxysmal" onclick="yesNystagmus('_ID_c');">paroxysmal<br>
-<input type="radio" id="_ID_r-2" name="_ID_r" value="persistent" onclick="yesNystagmus('_ID_c');">persistent<br>
-</div>
-<div id="_ID_c" style="display:inline-block; vertical-align:middle;float:left;">
-<input type="checkbox" onclick="nonefix(this)" name="_ID_c" id="_ID_c-0" value="up-beating"><label for="_ID_c-0">up-beating</label>
-<br><input type="checkbox" onclick="nonefix(this)" name="_ID_c" id="_ID_c-1" value="down-beating"><label for="_ID_c-1">down-beating</label>
-<br><input type="checkbox" onclick="nonefix(this)" name="_ID_c" id="_ID_c-2" value="left-beating"><label for="_ID_c-2">left-beating</label>
-<br><input type="checkbox" onclick="nonefix(this)" name="_ID_c" id="_ID_c-3" value="right-beating"><label for="_ID_c-3">right-beating</label>
-<br><input type="checkbox" onclick="nonefix(this)" name="_ID_c" id="_ID_c-4" value="leftward torsion"><label for="_ID_c-4">leftward torsion</label>
-<br><input type="checkbox" onclick="nonefix(this)" name="_ID_c" id="_ID_c-5" value="rightward torsion"><label for="_ID_c-5">rightward torsion</label>
-</div>`;
-
-	string = string.replace(/_ID_/g,obj.id);
-	
-	return html_row2(obj.label,string);
+	return string;
 }
 
 function html_checkbox(obj) {
-	var string = '<div id="' + obj.id + '" style="display:inline-block; vertical-align:middle;float:left;">';
-	for (var i = 0 ; i < obj.array.length ; i++) {
-		var subid = obj.id + '-' + i;
-		if (i > 0) { string += '<br>'; }
-		string += '<input type="checkbox" onclick="nonefix(this)" name="' + obj.id + '" id="' + subid +'" value="' + obj.array[i] + '">';
-		string += '<label for="' + subid + '">' + obj.array[i] + '</label>';
-	}
-	if (obj.other) {
-		var subid = obj.id + '-other';
-		string += '<p><span class="label">other</span><input type="text" id="' + subid + '">';
-	}
-	string += '</div>';
+	var string = raw_checkbox(obj.id,obj.array,'style="display:inline-block; vertical-align:middle;float:left;"',obj.other);
 	
 	return html_row2(obj.label,string);
+}
+
+function raw_radio(id,array,div_options)
+{
+	var string = '<div id="' + id + '" ' + div_options + '>';
+	
+	if (typeof array === "undefined") { array = []; }
+	if (id === "") { id = "radio"; }
+	
+	for (var i = 0 ; i < array.length ; i++) {
+		string += '<input type="radio" id="' + id + '-' + i + '" name="' + id + '" value="' + array[i] + '" >' + array[i] + '<br>';
+	}
+	if (currObj.other) { string += html_other_field(id); }
+	string += '</div>';
+
+	return string;
+}
+
+function raw_radio_fn(id,array,div_options,fn)
+{
+	var string = '<div id="' + id + '" ' + div_options + '>';
+	
+	if (typeof array === "undefined") { array = []; }
+	if (id === "") { id = "radio"; }
+	
+	var fname = 'poo';
+	for (var i = 0 ; i < array.length ; i++) {
+		if (i == 0) { fname = 'removeOptions'; } else { fname = 'showOptions'; }
+		string += '<input type="radio" id="' + id + '-' + i + '" name="' + id + '" value="' + array[i] + '" onclick="' + fname + '(\'' + fn + '\');">' + array[i] + '<br>';
+	}
+	string += '</div>';
+
+	return string;
+}
+
+function html_cr_double(obj) {
+	var string = raw_checkbox(obj.id + "-a",obj.array,'style="display:inline-block; vertical-align:middle;float:left;"',obj.other);
+	string += raw_radio(obj.id + "-b",obj.array2,'style="display:inline-block; vertical-align:middle;float:left;"');
+	return html_row2(obj.label,string);
+}
+
+function html_radio(obj) {
+	return html_row2(obj.label,raw_radio(obj.id,obj.array,'style="float:left;vertical-align:middle;"'));
+}
+
+function html_double_radio(obj) {
+	var string = raw_radio(obj.id + "-a",obj.array,'style="float:left;vertical-align:middle;"');
+	string += raw_radio(obj.id + "-b",obj.array2,'style="display:inline-block; vertical-align:middle;float:left;"');
+	
+	return html_row2(obj.label,string);
+}
+
+function html_triple_radio(obj) {
+	var string = raw_radio(obj.id + "-a",obj.array,'style="float:left;vertical-align:middle;"');
+	string += raw_radio(obj.id + "-b",obj.array2,'style="display:inline-block; vertical-align:middle;float:left;"');
+	string += raw_radio(obj.id + "-c",obj.array3,'style="display:inline-block; vertical-align:middle;float:left;"');
+	
+	return html_row2(obj.label,string);
+}
+
+
+function html_rc_depend(obj) {
+	var string = raw_radio_fn(obj.id + '-a', obj.array, 'style="float:left;vertical-align:middle;"', obj.id + '-b');
+	string += raw_checkbox(obj.id + '-b',obj.array2,'style="display:inline-block; vertical-align:middle;float:left;"',false,false);
+	return html_row2(obj.label,string);
+}
+
+function html_other_field(id) {
+	if (currObj.otherLarge) {
+		return '<p><span class="label">other: </span><textarea id="' + id + '-other" name="' + id + '-other" rows="3" cols="50" style="display:inline-block; vertical-align:middle;"></textarea></p>';
+	} else {
+		return '<p><span class="label">other: </span><input type="text" style="width: 300px;" id="' + id + '-other"></p>';
+	}
 }
 
 function bc_toString(obj) {
@@ -397,8 +718,7 @@ function bc_contains(obj,text) {
 }
 
 function bc_remove(obj) {
-	obj.parentElement.remove(); 
-	
+	obj.parentElement.remove();
 }
 
 function randomString(len, charSet) {
@@ -415,6 +735,8 @@ function aes_encrypt(message = '', key = ''){
     var message = CryptoJS.AES.encrypt(message, key);
     return message.toString();
 }
+
+
 
 function myGetElementValue(id) {
 	var obj = document.getElementById(id);
@@ -450,13 +772,13 @@ function generateText() {
 	return string;
 }
 
-function noNystagmus(name)
+function removeOptions(name)
 {
 	uncheckBoxes(name);
 	document.getElementById(name).style.display = "none"; 
 }
 
-function yesNystagmus(name)
+function showOptions(name)
 {
 	document.getElementById(name).style.display = "inline"; 
 }
@@ -494,6 +816,15 @@ function nonefix(elm, name) {
 	}
 }
 
+function getBPVal(id) {
+	var v1 = document.getElementById(id + "-1").value;
+	var v2 = document.getElementById(id + "-2").value;
+	var v3 = document.getElementById(id + "-3").value;
+	var v4 = document.getElementById(id + "-4").value;
+	
+	return "Lying: " + v1 + " / " + v2 + " Standing: " + v3 + " / " + v4;
+}
+
 function getNumericDropdownVal(id) {
 	
 	var vn = document.getElementById(id + "n").value;
@@ -524,27 +855,58 @@ function getCheckboxVal(id) {
 	return string;
 }
 
-function getDoubleRadioVal(name1,name2) {
-	var string1 = getRadioVal(name1);
-	var string2 = getRadioVal(name2);
-	if (string1 === "no nystagmus") {
-			return string1;
+function getCBVal(id) {
+	console.log("getCBVal: " + id);
+	var es = document.getElementById(id).getElementsByTagName( 'input' );
+	var string = '';
+	for (var i = 0; i < es.length; i++) {
+		if (es[i].checked) {
+			if (string !== "") { string += ", "; }
+			string += es[i].value;
+		}
 	}
-	if (string1 === "") {
-			return string2;
-	}
-	if (string2 === "") {
-			return string1;
-	}
-	return string1 + ", " + string2;
+	return string;
+}
+
+
+function getVal_rc_double(obj) {
+	var string1 = getRadioVal(obj.id + "-a");
+	var string2 = getCBVal(obj.id + "-b");
+	console.log("getVal_cr_double: " + string1 + ',' + string2);
+	return string1 + ": " + string2;
+}
+
+
+function getVal_cr_double(obj) {
+	var string1 = getCBVal(obj.id + "-a");
+	var string2 = getRadioVal(obj.id + "-b");
+	console.log("getVal_cr_double: " + string1 + ',' + string2);
+	return string1 + ": " + string2;
+}
+
+
+function getDoubleRadioVal(id) {
+	var string1 = getRadioVal(id + "-a");
+	var string2 = getRadioVal(id + "-b");
+	return string1 + ": " + string2;
+}
+
+function getTripleRadioVal(id) {
+	var string1 = getRadioVal(id + "-a");
+	var string2 = getRadioVal(id + "-b");
+	var string3 = getRadioVal(id + "-c");
+	return string1 + ": " + string2 + ": " + string3;
 }
 
 function getRadioVal(name) {
 	var radios = document.getElementsByName(name);
 
+console.log("getRadioVal: " + name);
+
 	for (var i = 0, length = radios.length; i < length; i++) {
 	  if (radios[i].checked) {
 		// do whatever you want with the checked radio
+		console.log("getRadioVal: " + radios[i].value);
 		return radios[i].value;
 		// only one radio can be logically checked, don't check the rest
 		break;
