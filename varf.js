@@ -280,8 +280,12 @@ function document_ready() {
 			ids = gp_ids;
 		break;
 		
-		default:
+		case 'neuro':
 			ids = full_ids;
+		break;
+
+		default:
+			ids = er_ids;
 	}
 	
 	fields['cranial_nerve_signs'].array = read_html_list("cranial_list");
