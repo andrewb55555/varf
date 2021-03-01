@@ -21,8 +21,12 @@
   padding: 8px;
 }
 
+:root {
+	--varf-bg-col: #c8d3e6;
+}
+
 .main > tbody > tr:nth-child(even) {
-	background-color: #c8d3e6
+	background-color: var(--varf-bg-col);
 }
 
 .mdd_btn {
