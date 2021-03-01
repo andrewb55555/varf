@@ -972,6 +972,7 @@ function reset() {
 function commit() {
 	copyTextToClipboard(generateText());
 	generateJSON();
+	alert("Form uploaded\nText Report copied to clipboard";
 }
 
 function fallbackCopyTextToClipboard(text) {
