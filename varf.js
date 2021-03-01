@@ -1,12 +1,12 @@
-var version = 4;
+var version = 3;
 
 var nystagmus_list = ['no nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)'];
 var direction_list = ['up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
 
 var fields = {};
 
-fields['state'] = 		{ label: "Postictal State", 	type: "radio"};
-fields['state'].array = ['Ictal','Interictal'];
+fields['state'] = 		{ label: "Experiencing vertigo during examination", 	type: "radio"};
+fields['state'].array = ['Yes','No'];
 
 fields['state_gp'] = 		{ label: "Performed when", 	type: "radio"};
 fields['state_gp'].array = ['Sympomatic','Asymptomatic'];
@@ -18,7 +18,7 @@ fields['location'].other = true;
 fields['conducted'] = 	{ label: "Conducted By", 				type: "text"};
 
 fields['designation'] = 		{ label: "Specialty", 	type: "radio"};
-fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist'];
+fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist','Neurologist'];
 fields['designation'].other = true;
 
 fields['blood_pressure'] = 		{ label: "Blood Pressure", 	type: "bpressure"};
@@ -32,9 +32,9 @@ fields['dob'] = 	{ label: "Date of Birth", 		type: "date"};
 fields['adate'] = 	{ label: "Assessment Date", 	type: "date"};
 fields['adate'].today = true;
 fields['gender'] = 	{ label: "Gender", 				type: "radio"};
-fields['gender'].array = ['Male','Female'];
+fields['gender'].array = ['Male','Female','Other'];
 fields['urgent'] = 	{ label: "Referral Urgency", 	type: "radio"};
-fields['urgent'].array = ['routine','semi-urgent (2 weeks)','urgent (1 week)'];
+fields['urgent'].array = ['routine','semi-urgent (1 week)','urgent (24 hours)'];
 
 fields['complaint'] = 	{ label: "Presenting Complaint", 			type: "checkbox"};
 fields['complaint'].array = ['Vertigo','Imbalance','Lightheadedness','Frequent Falls','Sudden Hearing Loss'];
@@ -48,28 +48,28 @@ fields['context'].array = [
 	'bending down or arching back',
 	'hanging clothes',	
 	'at hairdresser or dentist',
-	'turning in/getting in and out of bed',
+	'in bed / turning in / getting in and out of bed',
 	'standing from sitting',
 	'walking',
 	'in the supermarket',
-	'in bed',
 	'sitting quietly',
 	'working at computer or watching TV'];
-
-
 
 fields['onset'] = 	{ label: "Vertigo Onset", 			type: "numeric_dd"};
 fields['onset'].array = ['hours ago','days ago','months ago','years ago'];
 
+fields['onset_er'] = 	{ label: "Vertigo Onset", 			type: "radio"};
+fields['onset_er'].array = ['hours ago','days ago','months ago','years ago'];
+
 fields['no_episodes'] = 	{ label: "Number of previous episodes", 				type: "radio"};
-fields['no_episodes'].array = ['none','1-5','6-25','26+'];
+fields['no_episodes'].array = ['None','1-5','6-25','26+'];
 
 fields['freq_episodes'] = 	{ label: "Frequency of Episodes", 				type: "radio"};
 fields['freq_episodes'].array = ['several times a day','several times a week','several times a month','several times a year','rare','unpredictable','present all the time','n/a'];
 
 
 fields['increasing_freq'] = 	{ label: "Increasing frequency or severity in the last month", 				type: "radio"};
-fields['increasing_freq'].array = ['yes','no'];
+fields['increasing_freq'].array = ['Yes','No'];
 
 fields['vertigo_type'] = 	{ label: "Vertigo Type", 				type: "checkbox"};
 fields['vertigo_type'].array = ['spontaneous','positional'];
@@ -77,109 +77,132 @@ fields['vertigo_type'].array = ['spontaneous','positional'];
 fields['vertigo_duration'] = 	{ label: "Vertigo Duration", 				type: "numeric_dd"};
 fields['vertigo_duration'].array = ['seconds','minutes','hours','days'];
 
+fields['vertigo_duration_er'] = 	{ label: "Vertigo Duration", 				type: "radio"};
+fields['vertigo_duration_er'].array = ['seconds','minutes','hours','days'];
+
 fields['hearing_loss'] = 	{ label: "Hearing Loss", 				type: "triple_radio"};
-fields['hearing_loss'].array = ['none','left','right','both'];
+fields['hearing_loss'].array = ['None','Right','Left','both'];
 fields['hearing_loss'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
 fields['hearing_loss'].array3 = ['new','pre-existing','unsure'];
 
+fields['hearing_loss_er'] = 	{ label: "Hearing Loss", 				type: "radio"};
+fields['hearing_loss_er'].array = ['None','Right','Left','both'];
+
 fields['tinnitus'] = 	{ label: "Tinnitus", 				type: "double_radio"};
-fields['tinnitus'].array = ['none','left','right','both'];
+fields['tinnitus'].array = ['None','Right','Left','both'];
 fields['tinnitus'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
 
+fields['tinnitus_er'] = 	{ label: "Tinnitus", 				type: "radio"};
+fields['tinnitus_er'].array = ['None','Right','Left','both'];
+
 fields['fullness'] = 	{ label: "Aural Fullness", 				type: "double_radio"};
-fields['fullness'].array = ['none','left','right','both'];
-fields['fullness'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
+fields['fullness'].array = ['None','Right','Left','Both'];
+fields['fullness'].array2 = ['Associated with vertigo','Not associated with vertigo','Unsure'];
+
+fields['fullness_er'] = 	{ label: "Aural Fullness", 				type: "radio"};
+fields['fullness_er'].array = ['None','Right','Left','Both'];
 
 fields['migraine'] = 	{ label: "Migraine Symptoms", 				type: "cr_double"};
-fields['migraine'].array = ['none','headache','visual aura','photophobia','phonophobia','motion sensitivity'];
+fields['migraine'].array = ['None','headache','visual aura','photophobia','phonophobia','motion sensitivity'];
 fields['migraine'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
 
+fields['migraine_er'] = 	{ label: "Migraine Symptoms", 				type: "radio"};
+fields['migraine_er'].array = ['Yes','No'];
+
 fields['other_neuro_symptoms'] = 	{ label: "Other Neurological Symptoms", 				type: "checkbox"};
-fields['other_neuro_symptoms'].array = ['none','diplopia','weakness','numbness','hiccups','dysphonia','dysarthria','internuclear ophthalmoplegia (INO)'];
+fields['other_neuro_symptoms'].array = ['None','Diplopia','Weakness','Numbness','Hiccups','Dysphonia','Dysarthria'];
+
+fields['other_neuro_symptoms_er'] = 	{ label: "Other Neurological Symptoms", 				type: "textarea"};
 
 fields['vascular_risk'] = 	{ label: "Vascular Risk Factors", 				type: "checkbox"};
-fields['vascular_risk'].array = ['none','Diabetes Mellitus (DM)','Hypertension (HTN)','Atrial Fibrillation (AF)','Dyslipidemia','Smoker','Family History','Previous Stroke or Transient Ischaemic Attack (TIA)'];
+fields['vascular_risk'].array = ['None','Diabetes Mellitus (DM)','Hypertension (HTN)','Atrial Fibrillation (AF)','Dyslipidemia','Smoker','Family History','Previous Stroke or Transient Ischaemic Attack (TIA)'];
 
 fields['horners'] = 	{ label: "Horners Syndrome", 				type: "radio"};
-fields['horners'].array = ['none','left','right'];
+fields['horners'].array = ['None','Right','Left','Not Tested'];
 
 fields['meds'] = 	{ label: "Medications", 				type: "textarea"};
 
 
 fields['vertigo_category'] = 	{ label: "Vertigo Category", 				type: "radio"};
-fields['vertigo_category'].array = ['acute vestibular syndrome','episodic positional vertigo','episodic spontaneous vertigo','chronic persistent dizziness','other'];
+fields['vertigo_category'].array = ['acute vestibular syndrome','episodic positional vertigo','episodic spontaneous vertigo','chronic persistent dizziness','Other'];
 
 fields['examination'] = 	{ label: "Examination", 				type: "heading"};
 fields['examination'].array = [];
 
-fields['primary_nystagmus'] = 	{ label: "Primary Position Spontaneous Nystagmus", 				type: "radio"};
-fields['primary_nystagmus'].array = ['none','up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
+fields['primary_nystagmus'] = 	{ label: "Primary Position Spontaneous Nystagmus", 				type: "checkbox"};
+fields['primary_nystagmus'].array = ['None','up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
 
 fields['primary_nystagmus_gp'] = 	{ label: "Nystagmus when looking straight ahead", 				type: "radio"};
-fields['primary_nystagmus_gp'].array = ['none','left-beating','right-beating','other'];
+fields['primary_nystagmus_gp'].array = ['None','left-beating','right-beating','Other'];
 fields['primary_nystagmus_gp'].other = true;
 
 fields['gaze_evoked'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
-fields['gaze_evoked'].array = ['none','unidirectional','bidirectional'];
+fields['gaze_evoked'].array = ['None','unidirectional','bidirectional'];
 
 fields['gaze_evoked_gp'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
-fields['gaze_evoked_gp'].array = ['yes','no'];
+fields['gaze_evoked_gp'].array = ['Yes','No'];
 
 fields['rhallpike'] = 	{ label: "Right Hallpike Test", 			type: "rc_depend"};
 fields['rhallpike'].array = nystagmus_list;
 fields['rhallpike'].array2 = direction_list;
 
 fields['rhallpike_gp'] = 	{ label: "Right Hallpike Test", 			type: "radio"};
-fields['rhallpike_gp'].array = ['negative','positive'];
+fields['rhallpike_gp'].array = ['Negative','Positive'];
 
 fields['lhallpike'] = 	{ label: "Left Hallpike Test", 			type: "rc_depend"};
 fields['lhallpike'].array = nystagmus_list;
 fields['lhallpike'].array2 = direction_list;
 
 fields['lhallpike_gp'] = 	{ label: "Left Hallpike Test", 			type: "radio"};
-fields['lhallpike_gp'].array = ['negative','positive'];
+fields['lhallpike_gp'].array = ['Negative','Positive'];
 
 fields['hsaccades'] = 	{ label: "Horizontal Saccades", 			type: "radio"};
-fields['hsaccades'].array = ['Normal','Abnormal','other'];
+fields['hsaccades'].array = ['Normal','Abnormal','Other'];
+
+fields['ino'] = 	{ label: "Internuclear Ophthalmoplegia (INO)", 			type: "radio"};
+fields['ino'].array = ['Right','Left','None','Not Tested'];
 
 fields['vsaccades'] = 	{ label: "Vertical Saccades", 			type: "radio"};
-fields['vsaccades'].array = ['Normal','Abnormal','other'];
+fields['vsaccades'].array = ['Normal','Abnormal','Other'];
 
 fields['pursuit'] = 	{ label: "Smooth Pursuit", 			type: "radio"};
-fields['pursuit'].array = ['Normal','Saccadic','other'];
+fields['pursuit'].array = ['Normal','Saccadic','Other','Not Tested'];
 
 fields['romberg'] = 	{ label: "Matted Romberg's Test", 			type: "radio"};
-fields['romberg'].array = ['Negative','Positive','Equivocal'];
+fields['romberg'].array = ['Negative','Positive','Equivocal','Not Tested'];
 
 fields['unterberger'] = 	{ label: "Unterberger Test", 			type: "radio"};
-fields['unterberger'].array = ['Negative','Left Positive','Right Positive','Veers to both sides'];
+fields['unterberger'].array = ['Negative','Leftward','Rightward','Veers to both sides','Not Tested'];
 
 fields['tandem_gait'] = 	{ label: "Tandem Gait", 			type: "radio"};
-fields['tandem_gait'].array = ['Normal','Abnormal'];
+fields['tandem_gait'].array = ['Normal','Abnormal','Not Tested'];
 
 fields['hit'] = 	{ label: "Head Impulse Test", 				type: "radio"};
-fields['hit'].array = ['normal','left positive','right positive','both positive'];
+fields['hit'].array = ['normal','left Positive','right Positive','both Positive','Not Tested'];
 
 fields['skew'] = 	{ label: "Skew", 				type: "radio"};
-fields['skew'].array = ['present','absent'];
+fields['skew'].array = ['present','absent','Not Tested'];
 
 fields['cranial_nerve_signs'] = 	{ label: "Cranial Nerve Signs", 				type: "checkbox"};
 fields['cranial_nerve_signs'].array = [];
 fields['cranial_nerve_signs'].other = true;
 
+fields['dysarthria'] = 	{ label: "Dysarthria ", 				type: "radio"};
+fields['dysarthria'].array = ['Yes','No','Not Tested'];
+
 fields['cranial_nerve_signs_gp'] = 	{ label: "Cranial Nerve Signs", 				type: "textarea"};
 
 fields['limb_larm'] = 	{ label: "Limb Power Left Arm", 				type: "radio"};
-fields['limb_larm'].array = ['no drift','drifts without reaching bed before 10 seconds','some effort against gravity','no effort against gravity','no movement','untestable'];
+fields['limb_larm'].array = ['no drift','drifts without reaching bed before 10 seconds','some effort against gravity','no effort against gravity','no movement','untestable','Not Tested'];
 
 fields['limb_rarm'] = 	{ label: "Limb Power Right Arm", 				type: "radio"};
-fields['limb_rarm'].array = ['no drift','drifts without reaching bed before 10 seconds','some effort against gravity','no effort against gravity','no movement','untestable'];
+fields['limb_rarm'].array = ['no drift','drifts without reaching bed before 10 seconds','some effort against gravity','no effort against gravity','no movement','untestable','Not Tested'];
 
 fields['limb_lleg'] = 	{ label: "Limb Power Left Leg", 				type: "radio"};
-fields['limb_lleg'].array = ['no drift','drifts without reaching bed before 5 seconds','some effort against gravity','no effort against gravity','no movement','untestable'];
+fields['limb_lleg'].array = ['no drift','drifts without reaching bed before 5 seconds','some effort against gravity','no effort against gravity','no movement','untestable','Not Tested'];
 
 fields['limb_rleg'] = 	{ label: "Limb Power Right Leg", 				type: "radio"};
-fields['limb_rleg'].array = ['no drift','drifts without reaching bed before 5 seconds','some effort against gravity','no effort against gravity','no movement','untestable'];
+fields['limb_rleg'].array = ['no drift','drifts without reaching bed before 5 seconds','some effort against gravity','no effort against gravity','no movement','untestable','Not Tested'];
 
 fields['limb_larm_gp'] = 	{ label: "Left Arm Weakness", 				type: "radio"};
 fields['limb_larm_gp'].array = ['present','absent'];
@@ -191,10 +214,11 @@ fields['limb_rleg_gp'] = 	{ label: "Right Leg Weakness", 				type: "radio"};
 fields['limb_rleg_gp'].array = ['present','absent'];
 
 fields['ataxia'] = 	{ label: "Limb Ataxia", 				type: "checkbox"};
-fields['ataxia'].array = ['none','left arm','right arm','left leg','right leg'];
+fields['ataxia'].array = ['None','Left arm','right arm','left leg','right leg','Not Tested'];
 
 fields['sensory_loss'] = 	{ label: "Sensory Loss", 				type: "radio"};
-fields['sensory_loss'].array = ['none','left loss','left dense loss','right patchy loss','right dense loss','not tested'];
+fields['sensory_loss'].array = ['None','left loss','left dense loss','right patchy loss','right dense loss','Not Tested'];
+fields['sensory_loss'].other = true;
 
 fields['sensory_loss_gp'] = 	{ label: "Sensory Loss", 				type: "textarea"};
 
@@ -206,7 +230,7 @@ fields['morbid'].otherLarge = true;
 
 
 fields['gait'] = 	{ label: "Gait (Truncal Ataxia)", 				type: "radio"};
-fields['gait'].array = ['No ataxia','Grade 1 - mild to moderate imbalance with walking independently','Grade 2 - severe imbalance with standing, but cannot walk without support','Grade 3 - falling at upright posture'];
+fields['gait'].array = ['No ataxia','Grade 1 - mild to moderate imbalance with walking independently','Grade 2 - severe imbalance with standing, but cannot walk without support','Grade 3 - falling at upright posture','Not Tested'];
 
 fields['prelim_diagnosis'] = 	{ label: "Preliminary Diagnosis", 				type: "mega"};
 fields['prelim_diagnosis'].array = [];
@@ -220,15 +244,20 @@ fields['plan'] = 	{ label: "Management Plan", 				type: "mega"};
 fields['plan'].array = [];
 fields['plan'].other = true;
 
+fields['comment'] = { label: "Other Comments", 				type: "textarea"};
+
 fields['plan_gp'] = 	{ label: "Management Plan", 				type: "textarea"};
 
 var currObj;
 
-var gp_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','horners','vascular_risk','morbid','meds','vertigo_category','examination','state_gp','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','cranial_nerve_signs_gp','limb_larm_gp','limb_rarm_gp','limb_lleg_gp','limb_rleg_gp','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+var gp_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid','meds','vertigo_category','examination','state_gp','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','horners','cranial_nerve_signs_gp','dysarthria','limb_larm_gp','limb_rarm_gp','limb_lleg_gp','limb_rleg_gp','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
 
-var er_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','horners','vascular_risk','morbid','vertigo_category','examination','state','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','cranial_nerve_signs','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+var er_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms_er','vascular_risk','morbid','vertigo_category','examination','state','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
 
-var full_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','horners','vascular_risk','morbid','meds','vertigo_category','examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','cranial_nerve_signs','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
+var er2_ids = ['pd_head','adate','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset_er','vertigo_type','vertigo_duration_er','hearing_loss_er','tinnitus_er','fullness_er','migraine_er','other_neuro_symptoms_er','vascular_risk','morbid','vertigo_category','examination','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','hit','skew','prelim_diagnosis','comment'];
+
+
+var full_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid','meds','vertigo_category','examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','ino','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
 
 var ids = [];
 
@@ -267,25 +296,24 @@ function parse_query_string(query) {
 }
 
 function document_ready() {
+	let root = document.documentElement;
 	var query = window.location.href.toString();
 	var qs = parse_query_string(query);
 	var type = qs['type'];
 	if (typeof type === 'undefine') { type = 'full'; }
 	switch(qs['type']) {
 		case 'er':
-			ids = er_ids;
+			ids = er2_ids;
 		break;
 		
 		case 'gp':
 			ids = gp_ids;
+			root.style.setProperty('--varf-bg-col', "#a7e8aa");
 		break;
 		
-		case 'neuro':
-			ids = full_ids;
-		break;
-
 		default:
-			ids = er_ids;
+			ids = full_ids;
+			root.style.setProperty('--varf-bg-col', "#f5ac9f");
 	}
 	
 	fields['cranial_nerve_signs'].array = read_html_list("cranial_list");
@@ -740,6 +768,8 @@ function aes_encrypt(message = '', key = ''){
     return message.toString();
 }
 
+function generateJSON() {
+}
 
 
 function myGetElementValue(id) {
@@ -796,6 +826,11 @@ function uncheckBoxes(name) {
 }
 
 
+function isUniqueOption(string) {
+	var s = string.toLowerCase();
+	return s === 'none' || s === 'not tested';
+}
+
 function nonefix(elm, name) {
 	if (! elm.checked) { return; }
 	if (name == undefined) {  name = elm.name; }
@@ -804,7 +839,7 @@ function nonefix(elm, name) {
 	
 	console.log("in here name: " + name + "," + val);
 	var es = document.getElementsByName(name);
-	if (val === 'none') {
+	if (isUniqueOption(val)) {
 		for (var i = 0; i < es.length; i++) {
 			if (es[i] != elm) {
 				es[i].checked = false;
@@ -812,7 +847,7 @@ function nonefix(elm, name) {
 		}		
 	} else {
 		for (var i = 0; i < es.length; i++) {
-			if (es[i].value === "none") {
+			if (isUniqueOption(es[i].value)) {
 				es[i].checked = false;
 			}
 		}		
@@ -936,6 +971,7 @@ function reset() {
 
 function commit() {
 	copyTextToClipboard(generateText());
+	generateJSON();
 }
 
 function fallbackCopyTextToClipboard(text) {
