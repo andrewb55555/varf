@@ -1,5 +1,14 @@
 var version = 3;
 
+var pk = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs8zMXaiHcS7vajYYcmCn
+PXqQzQjPiprGrIz+beUKspNq7MSVzy6lavZwPvS71YtN/RSW/rvL+RK0aCAk9Mgt
+11wnbb5y5+5R8Y1JG53S3WWL8rC4e6fjZROyWiDRoqqdXddtld4mTSKT4yAoswMl
+aTer0iIXjMyhThH1g0aJ0TP3rrlQbWMgN1rgme/33JxGTK32QT673TGiDFKxHIYS
+m9c7eSo56Z3EUlYnusJ69Hu59J/phtPMnMdTrAlMuCY67hT0KgDryN7b9Z7lwA/w
+YiSZEdav0YhqxbOGKi/V1hJvKDOawTDZsDpTYLBQ2YbDgfoaRc0ys+C8Zbs3KhOs
+3wIDAQAB
+-----END PUBLIC KEY-----`;
 
 var nystagmus_list = ['no nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)'];
 var direction_list = ['up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
@@ -893,11 +902,55 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
-	return "";
+
+	var pass = randomString(64);
+	
+	dict = {};
+	
+	for (var i = 0 ; i < ids.length ; i++) {
+		var obj = fields[ids[i]];
+		if (obj.value != -1) {
+			dict[ids[i]] = obj.value;
+		}
+	}
+	
+	var string = JSON.stringify(dict);
+	
+	console.log(string);
+	
+	var rsa = new JSEncrypt({
+		default_key_size: 2048
+	  })
+	rsa.setKey(pk);
+
+	var cipher_key = rsa.encrypt(pass);
+	var poo = atob(cipher_key);
+	
+	console.log("important length is " + poo.length);
+	//cipher_key = btoa(atob(cipher_key).padStart(256, "\0"));
+	
+	var cipher_text = aes_encrypt(string,pass);
+	
+	$.post("https://terminus.icn.usyd.edu.au/cgi-bin/json_transfer.pl",
+		{
+			data: cipher_text,
+			key: cipher_key,
+			op: 'save'
+		},
+		function(data, status){ console.log("Data: " + data + "\nStatus: " + status); }
+	);
+	
+	return "Test JSON String";
 }
 
 function getValue_nystagmus(id) {
-	return "Nystagmus is good";
+	var s1 = getRadioVal(id + "-1");
+	if (s1 !== '') { s1 += " on Right Gaze"; }
+	var s2 = getRadioVal(id + "-2");
+	if (s2 !== '') { s2 += " on Neutral Gaze"; }
+	var s3 = getRadioVal(id + "-3");
+	if (s3 !== '') { s3 += " on Left Gaze"; }
+	return combineStrings3(s1,s2,s3);
 }
 
 function myGetElementValue(id) {
@@ -920,6 +973,7 @@ function myGetElementValue(id) {
 }
 
 function generateText() {
+	clearAlert();
 	extract_values(ids);
 
 	var string = "";
@@ -1046,6 +1100,11 @@ function combineStrings(a,b)
 	return a + "; " + b;
 }
 
+function combineStrings3(a,b,c)
+{
+	return combineStrings(a,combineStrings(b,c));
+}
+
 
 function getVal_rc_double(obj) {
 	var string1 = getRadioVal(obj.id + "-a");
@@ -1073,7 +1132,7 @@ function getTripleRadioVal(id) {
 	var string1 = getRadioVal(id + "-a");
 	var string2 = getRadioVal(id + "-b");
 	var string3 = getRadioVal(id + "-c");
-	return combineStrings(string1,combineStrings(string2,string3));
+	return combineStrings3(string1,string2,string3);
 }
 
 function getRadioVal(name) {
@@ -1161,12 +1220,16 @@ function copyText()
 	myAlert("Text Copied");
 }
 
+function clearAlert()
+{
+	var obj = document.getElementById("abalert");
+	obj.style.display = 'none';
+}
+
 function myAlert(str)
 {
 	var obj = document.getElementById("abalert");
 	obj.innerHTML = str;
-	obj.style.display = 'table';
-	setTimeout(() => {
-      obj.style.display = 'none';
-    }, 3000)
+	obj.style.display = 'block';
+	setTimeout(clearAlert,3000);
 }
