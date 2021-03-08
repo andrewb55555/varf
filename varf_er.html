@@ -1,0 +1,752 @@
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<title class="head">Emergency Department Vertigo Assessment</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="varf.css">
+
+<script src="jsencrypt.min.js"></script> 
+<script src="varf_er.js?10"></script> 
+
+</head>
+<body>
+
+<div id="diagnosis_list" style="display:none">
+atypical positing nystagmus
+autoimmune disease
+Autoimmune inner ear disease (AIIED)
+baroreceptor failure
+bilateral vestibular loss
+bpv
+brainstem stroke
+Brainstem Tumour
+cardiac rhythm disturbance
+central vertigo
+Cerebellar Ataxia
+clinically definite vestibular migraine
+clinically probable vestibular migraine
+cochlear implant assessment
+delayed endolymphatic hydrops
+extra pyramidal syndrome
+Head Motion Intolerance
+Labyrinthitis
+Meniere’s disease
+migraine
+motion sensitivity
+Near dehiscence
+No abnormality detected
+non-specific imbalance
+optic neuritis
+other
+Paraneoplastic syndrome
+peripheral neuropathy
+posterior circulation ischaemia
+postural hypotension
+psychophysical vertigo
+spinal cord pathology
+superior canal dehiscence
+TMJ Arthritis
+unilateral vestibular loss
+unilateral vestibulopathy
+Unknown
+vestibular neuritis
+vestibular paroxysmia
+vestibular schwannoma
+Visual vertigo
+</div>
+
+<div id="morbid_list" style="display:none">
+Acute Lymphocytic Leukaemia
+Acute Myeloid Leukaemia
+Acute Renal Failure
+Addison's Disease
+Adenoma
+Alcoholic Cerebellar Degeneration
+Allergy
+Alopecia
+Alzheimer's Disease
+Amnesia
+Anaemia
+Anal Fissure
+Anastomosis
+Aneurysm
+Angina pectoris
+Anosmia
+Antiphospholipid antibody syndrome
+Anxiety
+Aortic Incompetence
+Aortic Stenosis
+Appendiceal carcinoma
+Arteriovenous malformation
+Arteritis
+Arthritis
+Asbestosis
+Aspergillosis
+Asthma
+Atrial Fibrillation
+Atrial septal defect
+Astrocytoma
+Attention deficit disorder
+Attention deficit hyperactivity disorder
+Atypical Facial Pain
+Autoimmune inner ear disease
+Autonomic Neuropathy
+Back pain
+Barrett's Oesophagus
+Basal Cell Carcinoma
+Bell's Palsy
+Benign Essential Tremor
+Benign Positional Vertigo
+Benign prostatic hypertrophy
+Benign Tumour
+beta thalassaemia
+bilateral hearing loss
+Bilateral Vestibular Loss
+Bipolar Disorder
+Blepharospasm
+Bowel Carcinoma
+Bowel obstruction
+Brachial neuritis
+bradycardia
+brain neoplasm
+Breast Cancer
+Breast Carcinoma
+Bronchiectasis
+Bronchitis
+Bulimia
+Bursitis
+CANVAS
+carcinoma (other)
+Cardiac Failure
+Cardiac Rhythm Disturbance
+Cardiomegaly
+Cardiomyopathy
+Carpal Tunnel Syndrome
+Cataracts
+Cavernoma
+Cavernous Sinus Syndrome
+cellulitis
+Cerebellar Ataxia
+Cerebellar atrophy
+Cerebellopontine Ependymoma
+Cerebral Palsy
+Cerebrovascular Disease
+Cervical Canal Stenosis
+Cervical Carcinoma
+Cervical disc protrusion
+Cervical myelopathy
+Cervical spondylosis
+Charcot-Marie-Tooth Disease
+Chiari Malformation
+Cholecystitis
+Cholelithiasis
+Cholera
+Cholesteatoma
+Chorioretinitis
+Chronic Airflow Limitation
+Chronic Bronchitis
+Chronic Fatigue Syndrome
+Chronic Inflammatory Demyelinating Polyneuropathy
+Chronic Lymphocytic Leukaemia
+Chronic Myeloid Leukaemia
+Chronic Renal Failure
+Chronic Renal Impairment
+Claudication
+cochlear implant
+Coeliac Disease
+Cogan's syndrome
+Cognitive impairment
+Cold agglutin disease
+colonic carcinoma
+Congestive Cardiac Failure
+Conn's syndrome
+Constipation
+Corneal Dystrophy
+Coronary
+Coronary artery disease
+Coronary Bypass
+Corpus Collosum Lipoma
+Corticobasal Degeneration
+Craniosynostosis
+CREST syndrome
+Creutzfeldt Jakob Disease
+Crohn's Disease
+Crowned Dens Syndrome
+currently Pregnant
+Current Smoker
+Cushing's Syndrome
+Cystic Fibrosis
+Deep Vein Thrombosis
+Deep Venous Thrombosis
+Dementia
+Demyelinating disease
+Depression
+Dercum's disease
+Dermatomyositis
+Diabetes Mellitus
+Diaphragmic palsy
+Diplopia
+Discitis
+Discectomy
+Diverticular Disease
+Down's Syndrome
+Duane's syndrome
+Dupuytren's Contracture
+Dysarthria
+Dyslexia
+Dystonia
+Ear Infection
+Eczema
+Ehlers Danlos Syndrome
+Emphysema
+Encephalitis
+Endometrial carcinoma
+Endometriosis
+Epilepsy
+Essential Tremor
+Ex-Smoker
+Facial myokymia
+Facial neuroma
+Familial Hemiplegic Migraine
+Family History of Heart Disease
+Fatty Liver
+Fibroadenoma
+Fibromyalgia
+Fibrosarcoma
+Follicular Keratosis Dermatitis
+Food Poisoning
+Frontotemporal Dementia
+G6PD deficiency
+gall bladder dysfunction
+Gastric Carcinoma
+gastroenteritis
+gastro oesophageal reflux
+Gastro Oesophageal Reflux Disease
+Generalised Epilepsy
+gestational diabetes
+Glandular fever
+Glaucoma
+Glioblastoma
+Glioma
+Glomerulonephritis
+Glucose Intolerance
+Goitre
+Gout
+Grave's Disease
+grommets
+Guillain-Barre Syndrome
+Hemochromatosis 
+Haemangioma
+Haemophilia
+Haemothorax
+Haemotympanum
+Hashimoto's Thyroiditis
+Hay Fever
+Headache non-specific
+Heavy Ethanol Consumption
+Helicobacter Pylori
+Hepatic carcinoma
+Hepatic Cirrhosis
+Hepatitis
+Hepatitis C
+Hernia
+Herpes Simplex Virus
+Hip dysplasia
+Hip Replacement
+Histadelia
+HIV
+Hodgkin's Lymphoma
+Horner's syndrome
+Huntington's Disease
+hydrocephalus
+Hypercholesterolaemia
+hyperhidrosis
+Hyperlipidaemia
+Hyperparathyroidism
+Hyper Prostatism
+Hypertension
+Hyperthyroidism 
+Hypertrophic Obstructive Cardiomyopathy
+hyperuricemia
+Hypogammaglobulinaemia
+Hypoglycaemia
+Hypokalaemia
+hyponatraemia
+Hypoparathyroidism
+Hypopituitarism
+Hypotension
+Hypothyroidism
+Hypotonia
+Hysterectomy
+IGg4 Systemic Disease
+Implanted Defibrillator
+Inflammatory Bowel Disease
+Insomnia
+Insulin Resistance
+Interstitial Lung Disease
+Iron Deficiency
+Irritable Bowel Syndrome
+Ischaemic Heart Disease
+Kidney Stones
+Knee pain
+Knee Replacement
+kyphoscoliosis
+Labyrinthitis
+Lactose Intolerance
+large vestibular aqueduct syndrome
+Laryngeal dystonia
+Laryngeal nodule
+Leukaemia
+Lewy Body Dementia
+lipomatosis
+Low blood pressure
+Lumbar Canal Stenosis
+Lumbar Disc Pathology
+Lung Cancer
+Lupus
+Lyme Disease
+Lymphedema
+Lymphoma
+Macular Degeneration
+Malaria
+Mal de Debarquement Syndrome (MdDS)
+Malignant Melanoma
+Marfan's Syndrome
+Mastitis
+Mastoidectomy
+Mastoid effusion
+Mastoiditis
+Medullary sponge kidney
+Medulloblastoma
+Melanoma
+Melatonin
+Meniere's Disease
+Meningioma
+Meningitis
+meniscal tear
+Menorrhagia
+Metrorrhagia
+Mesothelioma
+MGUS
+Migraine with family history
+Migraine without family history
+Miller Fisher Syndrome
+Mitral Incompetence
+Mitral Stenosis
+Mitral valve disease
+Mitral Valve Prolapse
+Mixed Connective Tissue Disease
+Motor Neurone Disease
+Multiple Endocrine Neoplasia
+Multiple pulmonary emboli
+Multiple Sclerosis
+Multisystem Atrophy
+Mumps
+Myasthenia Gravis
+Myoclonus
+Myelodysplasia
+Myeloproliferative disorder
+Myocardial Infarction
+Myopathy
+Myotonic Dystrophy
+Narcolepsy
+Nasal Congestion
+Nasopharyngeal carcinoma
+Neck Pain
+Nephrolithiasis
+neurofibromatosis
+Neuro-labyrinthitis
+neutropenia
+Nocturnal Hyperhidrosis
+Non-Hodgkin's Lymphoma
+Norrie syndrome
+Obesity
+Obsessive compulsive disorder
+Obstructive Sleep Apnoea
+Ocular toxoplasmosis
+Oesophageal Carcinoma
+Oesophagitis
+Oligoarthritis
+Optic Neuritis
+optic neuropathy
+Orthosclerosis
+Oscillopsia
+Osteoarthritis
+Osteogenesis imperfecta
+Osteomalacia 
+Osteomyelitis
+Osteopenia
+Osteoporosis
+Otitis Externa
+Otitis Media
+Otosclerosis
+Ovarian cancer
+Ovarian cysts
+Paget's disease
+Pancreatitis
+Papillary carcinoma
+Paraesthesia
+Paraneoplastic Syndrome
+Paresthesia 
+Parathyroidectomy
+Parkinsonism
+Parkinson's Disease
+Paroxysmal AF
+Partial Epilepsy
+Patulous Eustachian Tube
+pe
+Peptic Ulcer
+Perianal fistula
+pericardial effusion
+Pericarditis
+Peripheral Neuropathy
+Peripheral Vascular Disease
+Peritoneal cancer
+Permanent Pacemaker
+Permanent Pacemaker for rhythm disturbance
+pernicious anaemia
+Pes Cavus
+pharyngeal carcinoma
+Phrenic Nerve Palsy
+pituitary adenoma
+Pleomorphic adenoma
+Pleurisy
+Pneumonia
+Poliomyelitis
+Polycystic Ovarian Syndrome
+Polycythaemia
+Polymyalgia
+Polymyositis
+Polyps
+Polyuria
+Post-Traumatic Stress Disorder
+postural orthostatic tachycardia syndrome (POTS)
+Pre-eclampsia/eclampsia
+Progressive Supranuclear Palsy
+Prolactinoma
+prolapsed rectum
+Prostate Carcinoma
+Prostatic Hypertrophy
+Prostatitis
+Pseudo exfoliation syndrome
+Pseudogout
+Pseudohypoparathyroidism
+Psoriasis
+Psoriatic Arthritis
+Psychosis
+Ptosis
+Pulmonary Emboli
+Pulmonary Embolus
+Pulmonary Fibrosis
+Pulmonary Hypertension
+QT Syndrome
+Radiculopathy
+Ramsay Hunt Syndrome
+Raynaud's phenomenon
+Rectal Adenocarcinoma
+Rectocele
+Recurrent Miscarriages
+Refsum's Disease
+Renal Artery Stenosis
+Renal Calculi
+Renal Cell Carcinoma
+Renal disease
+Respiratory Tract Infection
+restless legs and burning toes
+Restless Legs Syndrome
+Restrictive lung disease
+Restrictive strain injury
+Retinal Detachment
+Retinitis Pigmentosa
+rheumatic fever
+Rheumatic Heart Disease
+Rheumatoid Arthritis
+Rhinitis
+Rosacea
+Ross River virus
+Rubella
+Salmonella
+Sarcoidosis
+Scheuermann's disease
+schizophrenia
+Schwannoma
+Schwannoma, Surgery
+Sciatica
+Scleroderma
+Scoliosis
+Seizures
+Sensorineural hearing loss
+Septal defect
+Seronegative Arthritis
+Shingles
+Shoulder Replacement
+Sickle Cell Anaemia
+Sick Sinus Syndrome
+Silicosis
+Sinus Dysrhythmia
+Sinusitis
+Sinus meningioma
+Sjogren's Syndrome
+Spina Bifida Occulta
+Spinal Canal Stenosis
+Spinal Claudication
+Splenectomy
+Spondylosis
+Squamous Cell Carcinoma
+Stapedectomy
+Stiff Man's Syndrome
+Still's disease
+Stroke
+Subarachnoid haemorrhage
+Subdural haemorrhage
+Sudden Sensorineural Hearing Loss
+SUNCT Syndrome
+superficial vein thrombosis
+superior canal dehiscence
+Supraventricular Tachycardia
+Surgery
+Sweet's syndrome
+Syncope
+Syphilis
+Systemic Lupus Erythematosus
+tachycardia
+Tarsal tunnel release
+Tendonitis
+Tonsillomegaly
+Tension Headache
+Testicular cancer
+Thalassaemia Trait
+Thrombocythaemia
+Thyroid Cancer
+thyroid carcinoma
+Thyroid Disease
+Thyroid nodules
+Thyrotoxicosis
+TMJ Dysfunction
+Tonsillitis
+Tracheo-Oesophageal Fistula (TOF)
+Transitional Cell Carcinoma
+Trauma
+Trigeminal Neuralgia
+Trismus
+Tuberculosis
+Tubulovillous Adenoma
+Turner's Syndrome
+Tympanic Membrane Perfusion
+Tympanoplasty
+Typhus
+Ulcerative Colitis
+Uncompensated Vestibular Loss
+Unilateral Hearing Loss
+Unilateral Vestibular Loss
+ureteric neoplasm
+Urinary Tract Infection
+Urosepsis
+Urticaria
+Uterine Carcinoma
+Uterine Prolapse
+Valvular Heart Disease
+Varicocele
+Vascular Dementia
+Velocardiofacial syndrome (VCFS)
+venous sinus thrombosis
+Ventricular Fibrillation
+ventricular tachycardia
+Vestibular aqueduct syndrome
+Vestibular Migraine
+Vestibular Neuritis
+Vestibular Neuropathy
+Visual Impairment
+Vitamin B12 Deficiency
+Vitamin D Deficiency
+Vitiligo
+Vitreous Detachment
+Wegener's Granulomatosis
+White Matter Hyperintensities
+White Matter Ischaemia
+Whooping Cough
+</div>
+
+<div id="plans_list" style="display:none">
+Referral to Anti-platelet therapy
+Omniax Rotator Treatment
+Calf and thigh strengthening exercises
+Cholesterol lowering medication
+Referral to Pschology for CBT
+No further intervention is required, discharge from clinic
+Referral for Electrocochleography
+Follow up as required only
+Home Video Oculography
+Increase dietary salt and water
+Increase in hydration
+Low salt diet, diuretics, betahistine
+Migraine preventative therapy
+Intra tympanic steroids / gentamicin
+Referral for Neck Physio-therapy
+Oral Steroids
+IV Steroids
+Intra-tympanic Steriods
+Referral to Otolaryngology
+Referral to Cardiology inclusive of echocardiography
+Referral to balance rehabilitation
+Referral to ophthalmologist for examination for stigmata of autoimmune inner ear disease
+Referral to physio for exercises to treat head-motion intolerance.
+Regular GP review for risk factor optimisation: monthly BP check, six monthly fasting lipids and BSL
+Review when symptomatic
+Self-directed balance rehabilitation
+Referral to Sleep Clinic
+Referral to Neuro-Surgery
+Training in Home Epley Manoeuvre
+Trial of Cinnarizine for vestibular symptoms
+Urgent imaging
+Vestibular function tests
+</div>
+
+<div id="cranial_list" style="display:none">
+Left facial weakness (Lower Motor Neuron)
+Left facial weakness (Upper Motor Neuron)
+Right facial weakness (Lower Motor Neuron)
+Right facial weakness (Upper Motor Neuron)
+Left Ptosis
+Right Ptosis
+Pupil Asymmetry Right > Left
+Pupil Asymmetry Left > Right
+Left Palatal Weakness Uvula Deviates Right
+Right Palatal Weakness Uvula Deviates Left
+Hearing Loss
+Normal Cranial Nerve Examination
+</div>
+
+<div id="preliminarysymptoms_list" style="display:none">
+Acute Vestibular Syndrome Stroke
+Acute Vestibular Syndrome (Vestibular Neuritis (VN))
+Acute Vestibular Syndrome (not VN)
+Recurrent Positional Vertigo (BPV)
+Recurrent Positional Vertigo (not BPV)
+Recurrent Spontaneous Vertigo (Meniere's Disease (MD))
+Recurrent Spontaneous Vertigo (Vestibular Migraine (VM))
+Recurrent Spontaneous Vertigo (cause unclear)
+Persistent Postural-Perceptual Dizziness (PPPD)
+Chronic Persistent Dizziness
+Other
+</div>
+
+<div id="preliminarysymptoms_list2" style="display:none">
+Stroke
+Vestibular Neuronitis (VN)
+Vestibular Migraine (VM)
+Meniere's Disease (MD)
+Multiple Sclerosis
+Neoplasm
+Vestibular Schwannoma
+Benign Positional Vertigo (BPV)
+Central Positional Vertigo
+Bilateral Vestibular Loss
+Vestibular Paroxysmia
+Peripheral Neuropathy
+Cerebellar Ataxia
+</div>
+
+<div id="abalert" ></div>
+
+<table class="head" style="font-family: Arial, sans-serif;"><tr><td>
+<img src="RPA_HOSPLOGO.JPG" alt="Royal Prince Alfred Hospital" style="float:left;width:70px;height:100px;">
+</td>
+<td>
+<center><h1>Emergency Department Vertigo Assessment</h1></center>
+</td>
+<td >
+Institute of Clinical Neurosciences
+<br>Royal Prince Alfred Hospital
+<br>Camperdown NSW Australia 2050
+<br>Tel: +61 2 80045350 Fax: +61 2 95158347
+</td>
+</tr>
+</table>
+
+
+<div id="main_screen">
+
+<button id="btnA" class="abbutton" onclick="setPage(0)">1. Details</button>
+<button id="btnB" class="abbutton abbutton2" onclick="setPage(1)">2. Context</button>
+<button id="btnC" class="abbutton abbutton3" onclick="setPage(2)">3. Exam</button>
+<button id="btnD" class="abbutton abbutton3" onclick="setPage(3)">4. Comments</button>
+<button id="btnE" class="abbutton abbutton4" onclick="reset()">Reset</button>
+<button id="btnF" class="abbutton abbutton5" onclick="commit()">Submit</button>
+
+<form id="varf_form">
+
+<table style="width: 100%">
+    <colgroup>
+       <col span="1" style="width: 65%;">
+       <col span="1" style="width: 35%;">
+    </colgroup>
+    
+    
+    
+    <!-- Put <thead>, <tbody>, and <tr>'s here! -->
+    <tbody>
+        <tr>
+            <td>
+<div id="divA">
+
+<div id="pageA">
+ <table class="main"><tbody id="main_body1"></tbody></table>
+</div>
+
+<div id="pageB">
+ <table class="main"><tbody id="main_body2"></tbody></table>
+</div>
+
+<div id="pageC">
+ <table class="main"><tbody id="main_body3"></tbody></table>
+</div>
+
+<div id="pageD">
+
+<span style="padding:50px">
+<textarea id="other_comments" name="other_comments" placeholder="Other comments..."></textarea> 
+</span>
+
+</div>
+
+</div>
+</td>
+            <td>
+
+<div id="divB">
+
+<div id="ab_text">
+<span><h2>Summary&nbsp;&nbsp;<button type="button" onclick="copyText()">Copy text</button></h2></span><br />
+<div id="ab_content"></div>
+
+</div>
+
+</div>
+
+
+</td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+<div id="start_screen" class="center">
+<button class="abbox" type="button" onclick="openScreen(true)">Open Form</button>
+</div>
+
+
+
+<script>
+document_ready()
+</script>
+
+</form>
+
+
+
+</body>
+
