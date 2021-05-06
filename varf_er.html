@@ -2,14 +2,14 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 
-<title class="head">Emergency Department Vertigo Assessment</title>
+<title class="head" id="varf_title">Emergency Department Vertigo Assessment</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="varf.css">
 
 <script src="jsencrypt.min.js"></script> 
-<script src="varf_er.js?v=11"></script> 
+<script src="varf_er.js?v=10"></script> 
 
 </head>
 <body>
@@ -636,7 +636,7 @@ Other
 
 <div id="preliminarysymptoms_list2" style="display:none">
 Stroke
-Vestibular Neuronitis (VN)
+Vestibular Neuritis (VN)
 Vestibular Migraine (VM)
 Meniere's Disease (MD)
 Multiple Sclerosis
@@ -656,7 +656,7 @@ Cerebellar Ataxia
 <img src="RPA_HOSPLOGO.JPG" alt="Royal Prince Alfred Hospital" style="float:left;width:70px;height:100px;">
 </td>
 <td>
-<center><h1>Emergency Department Vertigo Assessment</h1></center>
+<center><h1 id="varf_title2">Emergency Department Vertigo Assessment</h1></center>
 </td>
 <td >
 Institute of Clinical Neurosciences
@@ -674,7 +674,7 @@ Institute of Clinical Neurosciences
 <button id="btnB" class="abbutton abbutton2" onclick="setPage(1)">2. Context</button>
 <button id="btnC" class="abbutton abbutton3" onclick="setPage(2)">3. Exam</button>
 <button id="btnD" class="abbutton abbutton3" onclick="setPage(3)">4. Comments</button>
-<button id="btnE" class="abbutton abbutton4" onclick="reset()">Reset</button>
+<button id="btnE" class="abbutton abbutton4" onclick="reset_event()">Reset</button>
 <button id="btnF" class="abbutton abbutton5" onclick="commit()">Submit</button>
 
 <form id="varf_form">
