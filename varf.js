@@ -1,4 +1,6 @@
-var version = 3;
+var version = 4;
+
+var type = '';
 
 var nystagmus_list = ['no nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)'];
 var direction_list = ['up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
@@ -18,13 +20,13 @@ fields['location'].other = true;
 fields['conducted'] = 	{ label: "Conducted By", 				type: "text"};
 
 fields['designation'] = 		{ label: "Specialty", 	type: "radio"};
-fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist','Neurologist'];
+fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist','Neurologist','Specialist Nurse','Audiologist'];
 fields['designation'].other = true;
 
 fields['blood_pressure'] = 		{ label: "Blood Pressure", 	type: "bpressure"};
 
 fields['pd_head'] = 		{ label: "Patient Details", 	type: "heading"};
-fields['hist_head'] = 		{ label: "Patient History", 	type: "heading"};
+fields['hist_head'] = 		{ label: "Patient History / Context", 	type: "heading"};
 fields['mrn'] = 	{ label: "MRN", 				type: "text"};
 fields['gname'] = 	{ label: "Given Name(s)", 		type: "text"};
 fields['sname'] = 	{ label: "Surname", 			type: "text"};
@@ -41,6 +43,10 @@ fields['complaint'].array = ['Vertigo','Imbalance','Lightheadedness','Frequent F
 fields['complaint'].other = true;
 fields['complaint'].otherLarge = true;
 
+fields['complaint_er'] = 	{ label: "Features", 			type: "cr_double"};
+fields['complaint_er'].array = ['Vertigo','Lightheadedness','Hearing Change'];
+fields['complaint_er'].array2 = ['Right','Left','Both'];
+
 
 fields['context'] = { label: "Context in which current vertigo occurs", 	type: "checkbox"};
 fields['context'].other = true;
@@ -54,6 +60,9 @@ fields['context'].array = [
 	'in the supermarket',
 	'sitting quietly',
 	'working at computer or watching TV'];
+	
+fields['context_er'] = { label: "Context in which current vertigo occurs", 	type: "radio"};
+fields['context_er'].array = ['First episode of acute severe vertigo','Recurrent Positional Vertigo','Recurrent Non-positional Vertigo'];
 
 fields['onset'] = 	{ label: "Vertigo Onset", 			type: "numeric_dd"};
 fields['onset'].array = ['hours ago','days ago','months ago','years ago'];
@@ -78,7 +87,7 @@ fields['vertigo_duration'] = 	{ label: "Vertigo Duration", 				type: "numeric_dd
 fields['vertigo_duration'].array = ['seconds','minutes','hours','days'];
 
 fields['vertigo_duration_er'] = 	{ label: "Vertigo Duration", 				type: "radio"};
-fields['vertigo_duration_er'].array = ['seconds','minutes','hours','days'];
+fields['vertigo_duration_er'].array = ['seconds','minutes','hours','days','ongoing'];
 
 fields['hearing_loss'] = 	{ label: "Hearing Loss", 				type: "triple_radio"};
 fields['hearing_loss'].array = ['None','Right','Left','both'];
@@ -110,12 +119,16 @@ fields['migraine_er'] = 	{ label: "Migraine Symptoms", 				type: "radio"};
 fields['migraine_er'].array = ['Yes','No'];
 
 fields['other_neuro_symptoms'] = 	{ label: "Other Neurological Symptoms", 				type: "checkbox"};
-fields['other_neuro_symptoms'].array = ['None','Diplopia','Weakness','Numbness','Hiccups','Dysphonia','Dysarthria'];
+fields['other_neuro_symptoms'].array = ['None','Diplopia','Hiccups','Dysphonia','Dysarthria','Tullio Phenomenon','Weakness','Numbness','Ataxia'];
 
 fields['other_neuro_symptoms_er'] = 	{ label: "Other Neurological Symptoms", 				type: "textarea"};
 
 fields['vascular_risk'] = 	{ label: "Vascular Risk Factors", 				type: "checkbox"};
 fields['vascular_risk'].array = ['None','Diabetes Mellitus (DM)','Hypertension (HTN)','Atrial Fibrillation (AF)','Dyslipidemia','Smoker','Family History','Previous Stroke or Transient Ischaemic Attack (TIA)'];
+
+fields['past_history'] = 	{ label: "Past History", 				type: "checkbox"};
+fields['past_history'].array = ['None','Hearing Loss','Tinnitus','Aural Fullness','Migraine','Diabetes Mellitus (DM)','Hypertension (HTN)','Atrial Fibrillation (AF)','Dyslipidemia','Smoker','Family History','Previous Stroke or Transient Ischaemic Attack (TIA)'];
+
 
 fields['horners'] = 	{ label: "Horners Syndrome", 				type: "radio"};
 fields['horners'].array = ['None','Right','Left','Not Tested'];
@@ -128,6 +141,8 @@ fields['vertigo_category'].array = ['acute vestibular syndrome','episodic positi
 
 fields['examination'] = 	{ label: "Examination", 				type: "heading"};
 fields['examination'].array = [];
+
+fields['nystagmus3'] = 	{ label: "Nystagmus", 				type: "nystagmus"};
 
 fields['primary_nystagmus'] = 	{ label: "Primary Position Spontaneous Nystagmus", 				type: "checkbox"};
 fields['primary_nystagmus'].array = ['None','up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
@@ -156,6 +171,10 @@ fields['lhallpike'].array2 = direction_list;
 fields['lhallpike_gp'] = 	{ label: "Left Hallpike Test", 			type: "radio"};
 fields['lhallpike_gp'].array = ['Negative','Positive'];
 
+fields['hallpike_er'] = 	{ label: "Hallpike Test", 			type: "radio"};
+fields['hallpike_er'].array = ['Normal','Right Positive','Left Positive','Both Positive','Not Tested'];
+
+
 fields['hsaccades'] = 	{ label: "Horizontal Saccades", 			type: "radio"};
 fields['hsaccades'].array = ['Normal','Abnormal','Other'];
 
@@ -180,8 +199,11 @@ fields['tandem_gait'].array = ['Normal','Abnormal','Not Tested'];
 fields['hit'] = 	{ label: "Head Impulse Test", 				type: "radio"};
 fields['hit'].array = ['normal','left Positive','right Positive','both Positive','Not Tested'];
 
+fields['hit_er'] = 	{ label: "Head Impulse Test", 				type: "radio"};
+fields['hit_er'].array = ['Loses Fixation to the Right','Loses Fixation to the Left','Unable to Fixate to Both','Normal Impulse','Not Tested'];
+
 fields['skew'] = 	{ label: "Skew", 				type: "radio"};
-fields['skew'].array = ['present','absent','Not Tested'];
+fields['skew'].array = ['Yes','No','Not Tested'];
 
 fields['cranial_nerve_signs'] = 	{ label: "Cranial Nerve Signs", 				type: "checkbox"};
 fields['cranial_nerve_signs'].array = [];
@@ -245,20 +267,38 @@ fields['plan'] = 	{ label: "Management Plan", 				type: "mega"};
 fields['plan'].array = [];
 fields['plan'].other = true;
 
-fields['comment'] = { label: "Other Comments", 				type: "textarea"};
+fields['other_comments'] = { label: "Other Comments", 				type: "textarea"};
+fields['other_comments'].id = 'other_comments';
 
 fields['plan_gp'] = 	{ label: "Management Plan", 				type: "textarea"};
 
+fields['er_diag'] = 	{ label: "Final Diagnosis", 				type: "checkbox"};
+fields['er_diag'].array = ['Vestibular Neuritis (VN)','Stroke','Benign Positional Vertigo (BPV)','Other Positional Vertigo','Spontaneous Vertigo'];
+fields['er_diag'].other = true;
+
 var currObj;
 
-var gp_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid_gp','meds','examination','state_gp','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','horners','cranial_nerve_signs_gp','dysarthria','limb_larm_gp','limb_rarm_gp','limb_lleg_gp','limb_rleg_gp','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+var gp_ids = ['pd_head','adate','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid_gp','meds','examination','state_gp','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','horners','cranial_nerve_signs_gp','dysarthria','limb_larm_gp','limb_rarm_gp','limb_lleg_gp','limb_rleg_gp','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+
+
+var gpA_ids = ['pd_head','adate','conducted','mrn','sname','gname','gender','dob','urgent'];
+var gpB_ids = ['hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid_gp','meds'];
+var gpC_ids = ['examination','state_gp','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','horners','cranial_nerve_signs_gp','dysarthria','limb_larm_gp','limb_rarm_gp','limb_lleg_gp','limb_rleg_gp','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
+
 
 var er_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms_er','vascular_risk','morbid','vertigo_category','examination','state','blood_pressure','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss_gp','prelim_diagnosis','plan_gp'];
 
-var er2_ids = ['pd_head','adate','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset_er','vertigo_type','vertigo_duration_er','hearing_loss_er','tinnitus_er','fullness_er','migraine_er','other_neuro_symptoms_er','vascular_risk','morbid','vertigo_category','examination','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','hit','skew','prelim_diagnosis','comment'];
+var er2_ids = ['pd_head','adate','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset_er','vertigo_type','vertigo_duration_er','hearing_loss_er','tinnitus_er','fullness_er','migraine_er','other_neuro_symptoms_er','vascular_risk','morbid','vertigo_category','examination','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','hit','skew','prelim_diagnosis','other_comments'];
 
+var erA_ids = ['pd_head','adate','conducted','mrn','sname','gname','gender','dob','urgent'];
+var erB_ids = ['hist_head','complaint_er','context_er','onset_er','vertigo_duration_er','past_history'];
+var erC_ids = ['examination','nystagmus3','hallpike_er','hit_er','skew','er_diag'];
 
 var full_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid','meds','vertigo_category','examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','ino','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
+
+var neuroA_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent'];
+var neuroB_ids = ['hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid','meds','vertigo_category'];
+var neuroC_ids = ['examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','ino','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
 
 var ids = [];
 
@@ -275,8 +315,10 @@ function read_html_list(id) {
 }
 
 function prefill_today(id) {
-	let today = new Date().toISOString().substr(0, 10);
+	var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+	let today = new Date(Date.now() - tzoffset).toISOString().substr(0, 10);
 	document.getElementById(id).value = today;
+	generateText();
 }
 
 function parse_query_string(query) {
@@ -296,35 +338,178 @@ function parse_query_string(query) {
   return dict;
 }
 
+function setPage(n) {
+	var pageA =  document.getElementById("pageA");
+	var pageB =  document.getElementById("pageB");
+	var pageC =  document.getElementById("pageC");
+	var pageD =  document.getElementById("pageD");
+		
+	var btnA = 	document.getElementById("btnA");
+	var btnB = 	document.getElementById("btnB");
+	var btnC = 	document.getElementById("btnC");
+	var btnD = 	document.getElementById("btnD");
+		
+	btnA.style.backgroundColor = "#008CBA";
+	btnB.style.backgroundColor = "#008CBA";
+	btnC.style.backgroundColor = "#008CBA";
+	btnD.style.backgroundColor = "#008CBA";
+		 
+	pageA.style.display = "none"; 
+	pageB.style.display = "none"; 
+	pageC.style.display = "none"; 
+	pageD.style.display = "none"; 
+	
+	if (n < 0) { n = 0; }
+	if (n > 3) { n = 3; }
+	switch(n) {
+		case 0:
+		pageA.style.display = "block"; 
+		btnA.style.backgroundColor = "#4CAF50";
+		break;
+		
+		case 1:
+		pageB.style.display = "block"; 
+		btnB.style.backgroundColor = "#4CAF50";
+		break;
+		
+		case 2:
+		pageC.style.display = "block"; 
+		btnC.style.backgroundColor = "#4CAF50";
+		break;
+		
+		case 3:
+		pageD.style.display = "block"; 
+		btnD.style.backgroundColor = "#4CAF50";
+		break;							
+	}
+}
+
+function openScreen(main) {
+	var ms = document.getElementById("main_screen");
+	var ss = document.getElementById("start_screen");
+
+	reset();
+
+	if (main) {
+		ms.style.display = "block";
+		ss.style.display = "none";
+		myAlert("New form loaded");
+	} else {
+		ms.style.display = "none";
+		ss.style.display = "block";
+	}
+}
+
+function set_neuro_defaults() {
+	console.log("Setting Neuro Defaults");
+	title = "Neurology Department Vertigo Assessment";
+	fields['location'].def = 'Neurology';
+}
+
+function set_gp_defaults() {
+	title = "General Practice Referral Form";
+	fields['location'].def = 'ER';
+}
+
+function set_er_defaults() {
+	title = "Emergency Department Vertigo Assessment";
+	fields['location'].def = 'ER';
+}
+
 function document_ready() {
 	let root = document.documentElement;
+	
 	var query = window.location.href.toString();
 	var qs = parse_query_string(query);
-	var type = qs['type'];
-	if (typeof type === 'undefine') { type = 'full'; }
-	switch(qs['type']) {
-		case 'er':
-			ids = er2_ids;
-		break;
-		
-		case 'gp':
-			ids = gp_ids;
-			root.style.setProperty('--varf-bg-col', "#a7e8aa");
-		break;
-		
-		default:
-			ids = full_ids;
-			root.style.setProperty('--varf-bg-col', "#f5ac9f");
-	}
+	type = qs['type'];
+	
+	if (typeof type === 'undefine') { type = 'er'; }
 	
 	fields['cranial_nerve_signs'].array = read_html_list("cranial_list");
 	fields['plan'].array = read_html_list("plans_list");
 	fields['morbid'].array = read_html_list("morbid_list");
 	fields['prelim_diagnosis'].array = read_html_list("preliminarysymptoms_list");
 	fields['final_diagnosis'].array = read_html_list("diagnosis_list");
+
+	var title = "";
+
+	switch(type) {
 	
-	process_rows(ids);
+		case 'gp':
+		
+		set_gp_defaults();
+		
+		process_rows(document.getElementById("main_body1"),gpA_ids);
+		process_rows(document.getElementById("main_body2"),gpB_ids);
+		process_rows(document.getElementById("main_body3"),gpC_ids);
+
+		ids = ids.concat(gpA_ids);
+		ids = ids.concat(gpB_ids);
+		ids = ids.concat(gpC_ids);
+		
+
+		
+		break;
+		
+		case 'neuro':
+		
+		set_neuro_defaults();
+		
+		process_rows(document.getElementById("main_body1"),neuroA_ids);
+		process_rows(document.getElementById("main_body2"),neuroB_ids);
+		process_rows(document.getElementById("main_body3"),neuroC_ids);
+
+		ids = ids.concat(neuroA_ids);
+		ids = ids.concat(neuroB_ids);
+		ids = ids.concat(neuroC_ids);
+		
+		break;
+				
+		default:
+		
+		set_er_defaults();
+		
+		process_rows(document.getElementById("main_body1"),erA_ids);
+		process_rows(document.getElementById("main_body2"),erB_ids);
+		process_rows(document.getElementById("main_body3"),erC_ids);
+
+		ids = ids.concat(erA_ids);
+		ids = ids.concat(erB_ids);
+		ids = ids.concat(erC_ids);
+		
+		
+		break;
+		
+	}
+	
+	console.log("title: " + title);
+	
+	document.getElementById("varf_title").innerHTML = title;
+		
+	ids.push("other_comments");
+
+	var form = document.getElementById("varf_form");
+	form.addEventListener('change', function() {
+		console.log("Form update");
+		generateText();
+	});
+
+	setPage(0);
+
+	openScreen(false);
+
 	console.log("YES " + ids.length);
+}
+
+function dateString(str,str2)
+{
+	if (str2 === '') { return ''; }
+	console.log("data is " + str);
+	var d = new Date(str);
+	const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+	const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d);
+	const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+	return `${da}-${mo}-${ye}`;
 }
 
 function extract_values(ids) {
@@ -334,6 +519,8 @@ function extract_values(ids) {
 		console.log("extract_values: " + obj.id);
 		switch (obj.type) {
 			case 'date':
+				obj.value = dateString(document.getElementById(obj.id).valueAsDate,document.getElementById(obj.id).value);
+			break;
 			case 'text':
 			case 'textarea':			
 				obj.value = document.getElementById(obj.id).value;
@@ -379,6 +566,10 @@ function extract_values(ids) {
 				obj.value = getValue_mdd(obj.id);
 				break;
 				
+			case 'nystagmus':
+				obj.value = getValue_nystagmus(obj.id);
+				break;
+				
 			default:
 			console.log("process_rows: invalid type " + ids[i]);
 		}
@@ -393,15 +584,13 @@ function getNystagmusVal(id) {
 	return r + ", " + c;
 }
 
-function process_rows(ids) {
-	tbody = document.getElementById("main_body");
+function process_rows(tbody,ids) {
 	tbody.innerHTML = "";
 	for (var i = 0 ; i < ids.length ; i++) {
 		var obj = fields[ids[i]];
 		obj['id'] = ids[i];
 		currObj = obj;
 		var string = "";
-		console.log("process_rows: " + obj.id);
 		switch (obj.type) {
 			case 'date':
 				string = html_date(obj);
@@ -455,6 +644,10 @@ function process_rows(ids) {
 				string = html_mdd(obj);
 				break;
 				
+			case 'nystagmus':
+				string = html_nystagmus(obj);
+				break;
+
 			default:
 			console.log("process_rows: invalid type " + ids[i]);
 		}
@@ -538,6 +731,16 @@ function html_mdd(obj) {
 	
 	return html_row2(obj.label,string);
 }
+
+function html_nystagmus(obj) {	
+	var str = '<div class="nystagbox"><span style="text-align: center;width:100%;display:inline-block;"><br /><br />Nystagmus<br /><br /></span></div>';
+	str += '<div class="nystagbox"><span class="centertxt">Right Gaze</span><br /><br />'   + raw_radio('nystagmus3-1',['Right-beating','Left-beating','None'],'') + "</div>";
+	str += '<div class="nystagbox">Neutral Gaze<br /><br />' + raw_radio('nystagmus3-2',['Right-beating','Left-beating','None'],'') + "</div>";
+	str += '<div class="nystagbox">Left Gaze<br /><br />'    + raw_radio('nystagmus3-3',['Right-beating','Left-beating','None'],'') + "</div>";
+	
+	return html_row1(str);
+}
+
 
 function toggle_mdd(id) {
 	var obj = document.getElementById(id);
@@ -666,10 +869,21 @@ function raw_radio(id,array,div_options)
 	if (typeof array === "undefined") { array = []; }
 	if (id === "") { id = "radio"; }
 	
+	console.log("Radio Id: " + id + " -> " + fields['location'].def);
+	
+	var checked_text = '';
 	for (var i = 0 ; i < array.length ; i++) {
-		string += '<input type="radio" id="' + id + '-' + i + '" name="' + id + '" value="' + array[i] + '" >' + array[i] + '<br>';
+		if (fields['location'].def === array[i]) {
+				checked_text = 'checked';
+				console.log("Setting CHECKED");
+		} else { checked_text = ''; }
+		string += '<input type="radio" id="' + id + '-' + i + '" name="' + id + '" value="' + array[i] + '" ' + checked_text + '>' + array[i] + '<br>';
 	}
-	if (currObj.other) { string += html_other_field(id); }
+	if (currObj.other) {
+		//string += html_other_field(id);
+		
+		string += '<input type="radio" id="' + id + '-' + i + '" name="' + id + '" value="other">other: <input type="text" style="width: 300px;" id="' + id + '-other"><br>';
+	}
 	string += '</div>';
 
 	return string;
@@ -770,8 +984,18 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
+	return "Test JSON String";
 }
 
+function getValue_nystagmus(id) {
+	var s1 = getRadioVal(id + "-1");
+	if (s1 !== '') { s1 += " on Right Gaze"; }
+	var s2 = getRadioVal(id + "-2");
+	if (s2 !== '') { s2 += " on Neutral Gaze"; }
+	var s3 = getRadioVal(id + "-3");
+	if (s3 !== '') { s3 += " on Left Gaze"; }
+	return combineStrings3(s1,s2,s3);
+}
 
 function myGetElementValue(id) {
 	var obj = document.getElementById(id);
@@ -793,6 +1017,7 @@ function myGetElementValue(id) {
 }
 
 function generateText() {
+	clearAlert();
 	extract_values(ids);
 
 	var string = "";
@@ -800,9 +1025,13 @@ function generateText() {
 	for (var i = 0 ; i < ids.length ; i++) {
 		var obj = fields[ids[i]];
 		if (obj.value != -1) {
-			string += obj.label + ": " + obj.value + "\n";
+			if (obj.value.toString() !== '') {
+				string += "<b>" + obj.label + ":</b> " + obj.value + "<br />";
+			}
 		}
 	}
+	
+	document.getElementById("ab_content").innerHTML = string;
 
 	return string;
 }
@@ -908,12 +1137,24 @@ function getCBVal(id) {
 	return string;
 }
 
+function combineStrings(a,b)
+{
+	if (b === '') { return a; }
+	if (a === '') { return b; }
+	return a + "; " + b;
+}
+
+function combineStrings3(a,b,c)
+{
+	return combineStrings(a,combineStrings(b,c));
+}
+
 
 function getVal_rc_double(obj) {
 	var string1 = getRadioVal(obj.id + "-a");
 	var string2 = getCBVal(obj.id + "-b");
 	console.log("getVal_cr_double: " + string1 + ',' + string2);
-	return string1 + ": " + string2;
+	return combineStrings(string1,string2);
 }
 
 
@@ -921,21 +1162,21 @@ function getVal_cr_double(obj) {
 	var string1 = getCBVal(obj.id + "-a");
 	var string2 = getRadioVal(obj.id + "-b");
 	console.log("getVal_cr_double: " + string1 + ',' + string2);
-	return string1 + ": " + string2;
+	return combineStrings(string1,string2);
 }
 
 
 function getDoubleRadioVal(id) {
 	var string1 = getRadioVal(id + "-a");
 	var string2 = getRadioVal(id + "-b");
-	return string1 + ": " + string2;
+	return combineStrings(string1,string2);
 }
 
 function getTripleRadioVal(id) {
 	var string1 = getRadioVal(id + "-a");
 	var string2 = getRadioVal(id + "-b");
 	var string3 = getRadioVal(id + "-c");
-	return string1 + ": " + string2 + ": " + string3;
+	return combineStrings3(string1,string2,string3);
 }
 
 function getRadioVal(name) {
@@ -947,7 +1188,11 @@ console.log("getRadioVal: " + name);
 	  if (radios[i].checked) {
 		// do whatever you want with the checked radio
 		console.log("getRadioVal: " + radios[i].value);
-		return radios[i].value;
+		if (radios[i].value === 'other') {
+			return document.getElementById(name + "-other").value;
+		} else {
+			return radios[i].value;
+		}
 		// only one radio can be logically checked, don't check the rest
 		break;
 	  }
@@ -965,6 +1210,12 @@ function submit() {
 	);
 }
 
+function reset_event() {
+	reset();
+	openScreen(false);
+	myAlert("Form Reset");
+}
+
 function reset() {
 	document.getElementById('varf_form').reset();
 	reset_mega();
@@ -973,7 +1224,8 @@ function reset() {
 function commit() {
 	copyTextToClipboard(generateText());
 	generateJSON();
-	alert("Form uploaded\nText Report copied to clipboard");
+	openScreen(false);
+	myAlert("Form submitted to Neurology");
 }
 
 function fallbackCopyTextToClipboard(text) {
@@ -1011,4 +1263,27 @@ function copyTextToClipboard(text) {
   }, function(err) {
     console.error('Async: Could not copy text: ', err);
   });
+}
+
+function copyText()
+{
+	var str = document.getElementById("ab_content").innerHTML;
+	str = str.replace(/<\/?b>/gi, "");
+	str = str.replace(/<br\s*[\/]?>/gi, "\n");
+	copyTextToClipboard(str);
+	myAlert("Text Copied");
+}
+
+function clearAlert()
+{
+	var obj = document.getElementById("abalert");
+	obj.style.display = 'none';
+}
+
+function myAlert(str)
+{
+	var obj = document.getElementById("abalert");
+	obj.innerHTML = str;
+	obj.style.display = 'block';
+	setTimeout(clearAlert,3000);
 }
