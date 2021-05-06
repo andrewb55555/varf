@@ -1,4 +1,4 @@
-var version = 6;
+var version = 4;
 
 var type = '';
 
@@ -871,11 +871,14 @@ function raw_radio(id,array,div_options)
 	if (typeof array === "undefined") { array = []; }
 	if (id === "") { id = "radio"; }
 	
-	console.log("Radio Id: " + id + " -> " + fields[id].def);
+	var test = typeof fields[id] !== 'undefined' && typeof fields[id].def !== 'undefined';
+	if (test) {
+		console.log("Radio Id: " + id + " -> " + fields[id].def);
+	}
 	
 	var checked_text = '';
 	for (var i = 0 ; i < array.length ; i++) {
-		if (fields[id].def === array[i]) {
+		if (test && fields[id].def === array[i]) {
 				checked_text = 'checked';
 				console.log("Setting CHECKED");
 		} else { checked_text = ''; }
@@ -986,6 +989,7 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
+
 	return "Test JSON String";
 }
 
