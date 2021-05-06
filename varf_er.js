@@ -1,4 +1,4 @@
-var version = 5;
+var version = 6;
 
 var type = '';
 
@@ -22,6 +22,7 @@ fields['conducted'] = 	{ label: "Conducted By", 				type: "text"};
 fields['designation'] = 		{ label: "Specialty", 	type: "radio"};
 fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist','Neurologist','Specialist Nurse','Audiologist'];
 fields['designation'].other = true;
+
 
 fields['blood_pressure'] = 		{ label: "Blood Pressure", 	type: "bpressure"};
 
@@ -404,6 +405,7 @@ function set_neuro_defaults() {
 	console.log("Setting Neuro Defaults");
 	title = "Neurology Department Vertigo Assessment";
 	fields['location'].def = 'Neurology';
+	fields['designation'].def = 'Neurologist';
 }
 
 function set_gp_defaults() {
@@ -869,11 +871,11 @@ function raw_radio(id,array,div_options)
 	if (typeof array === "undefined") { array = []; }
 	if (id === "") { id = "radio"; }
 	
-	console.log("Radio Id: " + id + " -> " + fields['location'].def);
+	console.log("Radio Id: " + id + " -> " + fields[id].def);
 	
 	var checked_text = '';
 	for (var i = 0 ; i < array.length ; i++) {
-		if (fields['location'].def === array[i]) {
+		if (fields[id].def === array[i]) {
 				checked_text = 'checked';
 				console.log("Setting CHECKED");
 		} else { checked_text = ''; }
@@ -984,7 +986,6 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
-
 	return "Test JSON String";
 }
 
