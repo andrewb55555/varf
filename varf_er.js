@@ -1,6 +1,6 @@
-var version = 4;
-
+var version = 5;
 var type = '';
+var title = "";
 
 var nystagmus_list = ['no nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)'];
 var direction_list = ['up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
@@ -433,7 +433,7 @@ function document_ready() {
 	fields['prelim_diagnosis'].array = read_html_list("preliminarysymptoms_list");
 	fields['final_diagnosis'].array = read_html_list("diagnosis_list");
 
-	var title = "";
+	
 
 	switch(type) {
 	
@@ -487,6 +487,7 @@ function document_ready() {
 	console.log("title: " + title);
 	
 	document.getElementById("varf_title").innerHTML = title;
+	document.getElementById("varf_title2").innerHTML = title;
 		
 	ids.push("other_comments");
 
@@ -989,7 +990,7 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
-
+	
 	return "Test JSON String";
 }
 
@@ -1097,6 +1098,11 @@ function getBPVal(id) {
 	var v3 = document.getElementById(id + "-3").value;
 	var v4 = document.getElementById(id + "-4").value;
 	
+	if (v1 === "" && v2 === "" && v3 === "" && v4 === "") { return ""; }
+	if (v1 === '') { v1 = 0; }
+	if (v2 === '') { v2 = 0; }
+	if (v3 === '') { v3 = 0; }
+	if (v4 === '') { v4 = 0; }
 	return "Lying: " + v1 + " / " + v2 + " Standing: " + v3 + " / " + v4;
 }
 
