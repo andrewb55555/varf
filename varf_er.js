@@ -1,14 +1,4 @@
-var version = 4;
-
-var pk = `-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs8zMXaiHcS7vajYYcmCn
-PXqQzQjPiprGrIz+beUKspNq7MSVzy6lavZwPvS71YtN/RSW/rvL+RK0aCAk9Mgt
-11wnbb5y5+5R8Y1JG53S3WWL8rC4e6fjZROyWiDRoqqdXddtld4mTSKT4yAoswMl
-aTer0iIXjMyhThH1g0aJ0TP3rrlQbWMgN1rgme/33JxGTK32QT673TGiDFKxHIYS
-m9c7eSo56Z3EUlYnusJ69Hu59J/phtPMnMdTrAlMuCY67hT0KgDryN7b9Z7lwA/w
-YiSZEdav0YhqxbOGKi/V1hJvKDOawTDZsDpTYLBQ2YbDgfoaRc0ys+C8Zbs3KhOs
-3wIDAQAB
------END PUBLIC KEY-----`;
+var version = 7;
 
 var type = '';
 var title = "";
@@ -1017,44 +1007,6 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
-
-	var pass = randomString(64);
-	
-	dict = {};
-	
-	for (var i = 0 ; i < ids.length ; i++) {
-		var obj = fields[ids[i]];
-		if (obj.value != -1) {
-			dict[ids[i]] = obj.value;
-		}
-	}
-	
-	var string = JSON.stringify(dict);
-	
-	console.log(string);
-	
-	var rsa = new JSEncrypt({
-		default_key_size: 2048
-	  })
-	rsa.setKey(pk);
-
-	var cipher_key = rsa.encrypt(pass);
-	var poo = atob(cipher_key);
-	
-	console.log("important length is " + poo.length);
-	//cipher_key = btoa(atob(cipher_key).padStart(256, "\0"));
-	
-	var cipher_text = aes_encrypt(string,pass);
-	
-	$.post("https://terminus.icn.usyd.edu.au/cgi-bin/json_transfer.pl",
-		{
-			data: cipher_text,
-			key: cipher_key,
-			op: 'save'
-		},
-		function(data, status){ console.log("Data: " + data + "\nStatus: " + status); }
-	);
-	
 	return "Test JSON String";
 }
 
