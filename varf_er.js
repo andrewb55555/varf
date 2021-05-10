@@ -1,4 +1,15 @@
-var version = 5;
+var version = 4;
+
+var pk = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs8zMXaiHcS7vajYYcmCn
+PXqQzQjPiprGrIz+beUKspNq7MSVzy6lavZwPvS71YtN/RSW/rvL+RK0aCAk9Mgt
+11wnbb5y5+5R8Y1JG53S3WWL8rC4e6fjZROyWiDRoqqdXddtld4mTSKT4yAoswMl
+aTer0iIXjMyhThH1g0aJ0TP3rrlQbWMgN1rgme/33JxGTK32QT673TGiDFKxHIYS
+m9c7eSo56Z3EUlYnusJ69Hu59J/phtPMnMdTrAlMuCY67hT0KgDryN7b9Z7lwA/w
+YiSZEdav0YhqxbOGKi/V1hJvKDOawTDZsDpTYLBQ2YbDgfoaRc0ys+C8Zbs3KhOs
+3wIDAQAB
+-----END PUBLIC KEY-----`;
+
 var type = '';
 var title = "";
 
@@ -27,7 +38,7 @@ fields['designation'].other = true;
 fields['blood_pressure'] = 		{ label: "Blood Pressure", 	type: "bpressure"};
 
 fields['pd_head'] = 		{ label: "Patient Details", 	type: "heading"};
-fields['hist_head'] = 		{ label: "Patient History / Context", 	type: "heading"};
+fields['hist_head'] = 		{ label: "Patient History", 	type: "heading"};
 fields['mrn'] = 	{ label: "MRN", 				type: "text"};
 fields['gname'] = 	{ label: "Given Name(s)", 		type: "text"};
 fields['sname'] = 	{ label: "Surname", 			type: "text"};
@@ -87,7 +98,7 @@ fields['vertigo_type'].array = ['spontaneous','positional'];
 fields['vertigo_duration'] = 	{ label: "Vertigo Duration", 				type: "numeric_dd"};
 fields['vertigo_duration'].array = ['seconds','minutes','hours','days'];
 
-fields['vertigo_duration_er'] = 	{ label: "Vertigo Duration", 				type: "radio"};
+fields['vertigo_duration_er'] = 	{ label: "Vertigo Duration<br><i><small>please ask for the duration of a single dizzy spell</small></i>", 				type: "radio"};
 fields['vertigo_duration_er'].array = ['seconds','minutes','hours','days','ongoing'];
 
 fields['hearing_loss'] = 	{ label: "Hearing Loss", 				type: "triple_radio"};
@@ -133,6 +144,15 @@ fields['past_history'].array = ['None','Hearing Loss','Tinnitus','Aural Fullness
 
 fields['horners'] = 	{ label: "Horners Syndrome", 				type: "radio"};
 fields['horners'].array = ['None','Right','Left','Not Tested'];
+
+
+fields['shaking'] = 	{ label: "Head Shaking Nystagmus", 			type: "rc_depend"};
+fields['shaking'].array = ['Yes','No','Not Tested'];
+fields['shaking'].array2 = direction_list;
+
+fields['valsalva'] = 	{ label: "Valsalva Induced Nystagmus", 			type: "rc_depend"};
+fields['valsalva'].array = ['Yes','No','Not Tested'];
+fields['valsalva'].array2 = direction_list;
 
 fields['meds'] = 	{ label: "Medications", 				type: "textarea"};
 
@@ -292,14 +312,14 @@ var er_ids = ['pd_head','adate','location','conducted','designation','mrn','snam
 var er2_ids = ['pd_head','adate','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset_er','vertigo_type','vertigo_duration_er','hearing_loss_er','tinnitus_er','fullness_er','migraine_er','other_neuro_symptoms_er','vascular_risk','morbid','vertigo_category','examination','primary_nystagmus_gp','gaze_evoked_gp','rhallpike_gp','lhallpike_gp','hit','skew','prelim_diagnosis','other_comments'];
 
 var erA_ids = ['pd_head','adate','conducted','mrn','sname','gname','gender','dob','urgent'];
-var erB_ids = ['hist_head','complaint_er','context_er','onset_er','vertigo_duration_er','past_history'];
+var erB_ids = ['hist_head','complaint_er','context_er','onset_er','vertigo_duration_er','past_history','morbid_gp','meds'];
 var erC_ids = ['examination','nystagmus3','hallpike_er','hit_er','skew','er_diag'];
 
 var full_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent','hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid','meds','vertigo_category','examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','ino','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
 
 var neuroA_ids = ['pd_head','adate','location','conducted','designation','mrn','sname','gname','gender','dob','urgent'];
 var neuroB_ids = ['hist_head','complaint','context','onset','no_episodes','freq_episodes','increasing_freq','vertigo_type','vertigo_duration','hearing_loss','tinnitus','fullness','migraine','other_neuro_symptoms','vascular_risk','morbid','meds','vertigo_category'];
-var neuroC_ids = ['examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','ino','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','horners','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
+var neuroC_ids = ['examination','state','blood_pressure','primary_nystagmus','gaze_evoked','rhallpike','lhallpike','hsaccades','ino','vsaccades','pursuit','romberg','unterberger','tandem_gait','hit','skew','horners','shaking','valsalva','cranial_nerve_signs','dysarthria','limb_larm','limb_rarm','limb_lleg','limb_rleg','ataxia','gait','sensory_loss','prelim_diagnosis','plan'];
 
 var ids = [];
 
@@ -778,7 +798,14 @@ function getValue_mdd(id) {
 			}
 		}
 	}
+	if (fields[id].other) { string = myJoin(',',string,document.getElementById(id + '-other').value); }
 	return string;
+}
+
+function myJoin(a,b,c) {
+	if (b === '') { return c; }
+	if (c === '') { return b; }
+	return b + a + c;
 }
 
 
@@ -904,7 +931,7 @@ function raw_radio_fn(id,array,div_options,fn)
 	
 	var fname = 'poo';
 	for (var i = 0 ; i < array.length ; i++) {
-		if (i == 0) { fname = 'removeOptions'; } else { fname = 'showOptions'; }
+		if (array[i].toLowerCase() === 'no nystagmus' || array[i].toLowerCase() === 'no' || array[i].toLowerCase() === 'not tested') { fname = 'removeOptions'; } else { fname = 'showOptions'; }
 		string += '<input type="radio" id="' + id + '-' + i + '" name="' + id + '" value="' + array[i] + '" onclick="' + fname + '(\'' + fn + '\');">' + array[i] + '<br>';
 	}
 	string += '</div>';
@@ -990,6 +1017,43 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
+
+	var pass = randomString(64);
+	
+	dict = {};
+	
+	for (var i = 0 ; i < ids.length ; i++) {
+		var obj = fields[ids[i]];
+		if (obj.value != -1) {
+			dict[ids[i]] = obj.value;
+		}
+	}
+	
+	var string = JSON.stringify(dict);
+	
+	console.log(string);
+	
+	var rsa = new JSEncrypt({
+		default_key_size: 2048
+	  })
+	rsa.setKey(pk);
+
+	var cipher_key = rsa.encrypt(pass);
+	var poo = atob(cipher_key);
+	
+	console.log("important length is " + poo.length);
+	//cipher_key = btoa(atob(cipher_key).padStart(256, "\0"));
+	
+	var cipher_text = aes_encrypt(string,pass);
+	
+	$.post("https://terminus.icn.usyd.edu.au/cgi-bin/json_transfer.pl",
+		{
+			data: cipher_text,
+			key: cipher_key,
+			op: 'save'
+		},
+		function(data, status){ console.log("Data: " + data + "\nStatus: " + status); }
+	);
 	
 	return "Test JSON String";
 }
