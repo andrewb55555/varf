@@ -1,4 +1,4 @@
-var version = 7;
+var version = 9;
 
 var type = '';
 var title = "";
@@ -21,7 +21,7 @@ fields['location'].other = true;
 fields['conducted'] = 	{ label: "Conducted By", 				type: "text"};
 
 fields['designation'] = 		{ label: "Specialty", 	type: "radio"};
-fields['designation'].array = ['Emergency','General Practitioner','Neuro-otologist','Neurologist','Specialist Nurse','Audiologist'];
+fields['designation'].array = ['Emergency','General Practitioner','Neuro-otology','Neurology','Specialist Nurse','Audiology'];
 fields['designation'].other = true;
 
 
@@ -47,7 +47,7 @@ fields['complaint'].otherLarge = true;
 
 fields['complaint_er'] = 	{ label: "Features", 			type: "cr_double"};
 fields['complaint_er'].array = ['Vertigo','Lightheadedness','Hearing Change'];
-fields['complaint_er'].array2 = ['Right','Left','Both'];
+fields['complaint_er'].array2 = ['Right','Left','Bilateral'];
 
 
 fields['context'] = { label: "Context in which current vertigo occurs", 	type: "checkbox"};
@@ -92,30 +92,30 @@ fields['vertigo_duration_er'] = 	{ label: "Vertigo Duration<br><i><small>please 
 fields['vertigo_duration_er'].array = ['seconds','minutes','hours','days','ongoing'];
 
 fields['hearing_loss'] = 	{ label: "Hearing Loss", 				type: "triple_radio"};
-fields['hearing_loss'].array = ['None','Right','Left','both'];
-fields['hearing_loss'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
-fields['hearing_loss'].array3 = ['new','pre-existing','unsure'];
+fields['hearing_loss'].array = ['None','Right','Left','Bilateral'];
+fields['hearing_loss'].array2 = ['associated with vertigo','not associated with vertigo','unsure if associated with vertigo'];
+fields['hearing_loss'].array3 = ['new','pre-existing','unsure if pre-existing'];
 
 fields['hearing_loss_er'] = 	{ label: "Hearing Loss", 				type: "radio"};
-fields['hearing_loss_er'].array = ['None','Right','Left','both'];
+fields['hearing_loss_er'].array = ['None','Right','Left','Bilateral'];
 
 fields['tinnitus'] = 	{ label: "Tinnitus", 				type: "double_radio"};
-fields['tinnitus'].array = ['None','Right','Left','both'];
-fields['tinnitus'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
+fields['tinnitus'].array = ['None','Right','Left','Bilateral'];
+fields['tinnitus'].array2 = ['associated with vertigo','not associated with vertigo','unsure if associated with vertigo'];
 
 fields['tinnitus_er'] = 	{ label: "Tinnitus", 				type: "radio"};
-fields['tinnitus_er'].array = ['None','Right','Left','both'];
+fields['tinnitus_er'].array = ['None','Right','Left','Bilateral'];
 
 fields['fullness'] = 	{ label: "Aural Fullness", 				type: "double_radio"};
-fields['fullness'].array = ['None','Right','Left','Both'];
-fields['fullness'].array2 = ['Associated with vertigo','Not associated with vertigo','Unsure'];
+fields['fullness'].array = ['None','Right','Left','Bilateral'];
+fields['fullness'].array2 = ['associated with vertigo','not associated with vertigo','unsure if associated with vertigo'];
 
 fields['fullness_er'] = 	{ label: "Aural Fullness", 				type: "radio"};
-fields['fullness_er'].array = ['None','Right','Left','Both'];
+fields['fullness_er'].array = ['None','Right','Left','Bilateral'];
 
 fields['migraine'] = 	{ label: "Migraine Symptoms", 				type: "cr_double"};
 fields['migraine'].array = ['None','headache','visual aura','photophobia','phonophobia','motion sensitivity'];
-fields['migraine'].array2 = ['associated with vertigo','not associated with vertigo','unsure'];
+fields['migraine'].array2 = ['associated with vertigo','not associated with vertigo','unsure if associated with vertigo'];
 
 fields['migraine_er'] = 	{ label: "Migraine Symptoms", 				type: "radio"};
 fields['migraine_er'].array = ['Yes','No'];
@@ -183,20 +183,23 @@ fields['lhallpike_gp'] = 	{ label: "Left Hallpike Test", 			type: "radio"};
 fields['lhallpike_gp'].array = ['Negative','Positive'];
 
 fields['hallpike_er'] = 	{ label: "Hallpike Test", 			type: "radio"};
-fields['hallpike_er'].array = ['Normal','Right Positive','Left Positive','Both Positive','Not Tested'];
+fields['hallpike_er'].array = ['Normal','Right Positive','Left Positive','Both Sides Positive','Not Tested'];
 
 
 fields['hsaccades'] = 	{ label: "Horizontal Saccades", 			type: "radio"};
-fields['hsaccades'].array = ['Normal','Abnormal','Other'];
+fields['hsaccades'].array = ['Normal','Abnormal'];
+fields['hsaccades'].other = true;
 
 fields['ino'] = 	{ label: "Internuclear Ophthalmoplegia (INO)", 			type: "radio"};
 fields['ino'].array = ['Right','Left','None','Not Tested'];
 
 fields['vsaccades'] = 	{ label: "Vertical Saccades", 			type: "radio"};
-fields['vsaccades'].array = ['Normal','Abnormal','Other'];
+fields['vsaccades'].array = ['Normal','Abnormal'];
+fields['vsaccades'].other = true;
 
 fields['pursuit'] = 	{ label: "Smooth Pursuit", 			type: "radio"};
-fields['pursuit'].array = ['Normal','Saccadic','Other','Not Tested'];
+fields['pursuit'].array = ['Normal','Saccadic','Not Tested'];
+fields['pursuit'].other = true;
 
 fields['romberg'] = 	{ label: "Matted Romberg's Test", 			type: "radio"};
 fields['romberg'].array = ['Negative','Positive','Equivocal','Not Tested'];
@@ -208,10 +211,10 @@ fields['tandem_gait'] = 	{ label: "Tandem Gait", 			type: "radio"};
 fields['tandem_gait'].array = ['Normal','Abnormal','Not Tested'];
 
 fields['hit'] = 	{ label: "Head Impulse Test", 				type: "radio"};
-fields['hit'].array = ['normal','left Positive','right Positive','both Positive','Not Tested'];
+fields['hit'].array = ['Normal','Left Positive','Right Positive','Both Sides Positive','Not Tested'];
 
 fields['hit_er'] = 	{ label: "Head Impulse Test", 				type: "radio"};
-fields['hit_er'].array = ['Loses Fixation to the Right','Loses Fixation to the Left','Unable to Fixate to Both','Normal Impulse','Not Tested'];
+fields['hit_er'].array = ['Loses Fixation to the Right','Loses Fixation to the Left','Unable to Fixate Bilaterally','Normal Impulse','Not Tested'];
 
 fields['skew'] = 	{ label: "Skew", 				type: "radio"};
 fields['skew'].array = ['Yes','No','Not Tested'];
@@ -250,7 +253,7 @@ fields['ataxia'] = 	{ label: "Limb Ataxia", 				type: "checkbox"};
 fields['ataxia'].array = ['None','Left arm','right arm','left leg','right leg','Not Tested'];
 
 fields['sensory_loss'] = 	{ label: "Sensory Loss", 				type: "radio"};
-fields['sensory_loss'].array = ['None','left loss','left dense loss','right patchy loss','right dense loss','Not Tested'];
+fields['sensory_loss'].array = ['None','left patchy loss','left dense loss','right patchy loss','right dense loss','Not Tested'];
 fields['sensory_loss'].other = true;
 
 fields['sensory_loss_gp'] = 	{ label: "Sensory Loss", 				type: "textarea"};
@@ -415,7 +418,7 @@ function set_neuro_defaults() {
 	console.log("Setting Neuro Defaults");
 	title = "Neurology Department Vertigo Assessment";
 	fields['location'].def = 'Neurology';
-	fields['designation'].def = 'Neurologist';
+	fields['designation'].def = 'Neurology';
 }
 
 function set_gp_defaults() {
@@ -1246,6 +1249,7 @@ function reset_event() {
 
 function reset() {
 	document.getElementById('varf_form').reset();
+	document.getElementById("ab_content").innerHTML = "";
 	reset_mega();
 }
 
