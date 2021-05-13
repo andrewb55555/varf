@@ -679,7 +679,7 @@ Institute of Clinical Neurosciences
 <button id="btnC" class="abbutton abbutton3" onclick="setPage(2)">3. Exam</button>
 <button id="btnD" class="abbutton abbutton3" onclick="setPage(3)">4. Comments</button>
 <button id="btnE" class="abbutton abbutton4" onclick="reset_event()">Reset</button>
-<button id="btnF" class="abbutton abbutton5" onclick="commit()">Submit</button>
+<button id="btnF" class="abbutton abbutton5" onclick="submit_event()">Submit</button>
 
 <form id="varf_form">
 
@@ -749,6 +749,21 @@ document_ready()
 </script>
 
 </form>
+
+<div id="diag_id01" class="diag_modal">
+  <span onclick="myConfirm_close()" class="diag_close" title="Close Modal">&times;</span>
+  <form class="diag_modal-content" action="/action_page.php">
+    <div class="diag_container">
+      <h1 id="diag_title">Delete Account</h1>
+      <p id="diag_subtitle">Are you sure you want to delete your account?</p>
+
+      <div class="diag_clearfix">
+        <button type="button" onclick="myConfirm_optionA()" id="diag_btnA" class="diag_button">Cancel</button>
+        <button type="button" onclick="myConfirm_optionB()" id="diag_btnB" class="diag_button">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
 
 
 
