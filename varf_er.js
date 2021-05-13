@@ -1,10 +1,10 @@
-var version = 9;
+var version = 10;
 
 var type = '';
 var title = "";
 
-var nystagmus_list = ['no nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)'];
-var direction_list = ['up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
+var nystagmus_list = ['No Nystagmus','Positive Paroxysmal (BPV)','Persistent Nystagmus (non-BPV)','Not Tested'];
+var direction_list = ['Up-beating','Down-beating','Left-beating','Right-beating','Leftward-torsion','Rightward-torsion'];
 
 var fields = {};
 
@@ -29,13 +29,13 @@ fields['blood_pressure'] = 		{ label: "Blood Pressure", 	type: "bpressure"};
 
 fields['pd_head'] = 		{ label: "Patient Details", 	type: "heading"};
 fields['hist_head'] = 		{ label: "Patient History", 	type: "heading"};
-fields['mrn'] = 	{ label: "MRN", 				type: "text"};
-fields['gname'] = 	{ label: "Given Name(s)", 		type: "text"};
-fields['sname'] = 	{ label: "Surname", 			type: "text"};
-fields['dob'] = 	{ label: "Date of Birth", 		type: "date"};
+fields['mrn'] = 	{ label: "Patient MRN", 				type: "text"};
+fields['gname'] = 	{ label: "Patient Given Name(s)", 		type: "text"};
+fields['sname'] = 	{ label: "Patient Surname", 			type: "text"};
+fields['dob'] = 	{ label: "Patient Date of Birth", 		type: "date"};
 fields['adate'] = 	{ label: "Assessment Date", 	type: "date"};
 fields['adate'].today = true;
-fields['gender'] = 	{ label: "Gender", 				type: "radio"};
+fields['gender'] = 	{ label: "Patient Gender", 				type: "radio"};
 fields['gender'].array = ['Male','Female','Other'];
 fields['urgent'] = 	{ label: "Referral Urgency", 	type: "radio"};
 fields['urgent'].array = ['routine','semi-urgent (1 week)','urgent (24 hours)'];
@@ -131,10 +131,8 @@ fields['vascular_risk'].array = ['None','Diabetes Mellitus (DM)','Hypertension (
 fields['past_history'] = 	{ label: "Past History", 				type: "checkbox"};
 fields['past_history'].array = ['None','Hearing Loss','Tinnitus','Aural Fullness','Migraine','Diabetes Mellitus (DM)','Hypertension (HTN)','Atrial Fibrillation (AF)','Dyslipidemia','Smoker','Family History','Previous Stroke or Transient Ischaemic Attack (TIA)'];
 
-
 fields['horners'] = 	{ label: "Horners Syndrome", 				type: "radio"};
 fields['horners'].array = ['None','Right','Left','Not Tested'];
-
 
 fields['shaking'] = 	{ label: "Head Shaking Nystagmus", 			type: "rc_depend"};
 fields['shaking'].array = ['Yes','No','Not Tested'];
@@ -146,9 +144,9 @@ fields['valsalva'].array2 = direction_list;
 
 fields['meds'] = 	{ label: "Medications", 				type: "textarea"};
 
-
-fields['vertigo_category'] = 	{ label: "Vertigo Category", 				type: "radio"};
-fields['vertigo_category'].array = ['acute vestibular syndrome','episodic positional vertigo','episodic spontaneous vertigo','chronic persistent dizziness','Other'];
+fields['vertigo_category'] = 	{ label: "Vertigo Category", 				type: "checkbox"};
+fields['vertigo_category'].array = ['acute vestibular syndrome','episodic positional vertigo','episodic spontaneous vertigo','chronic persistent dizziness'];
+fields['vertigo_category'].other = true;
 
 fields['examination'] = 	{ label: "Examination", 				type: "heading"};
 fields['examination'].array = [];
@@ -156,14 +154,14 @@ fields['examination'].array = [];
 fields['nystagmus3'] = 	{ label: "Nystagmus", 				type: "nystagmus"};
 
 fields['primary_nystagmus'] = 	{ label: "Primary Position Spontaneous Nystagmus", 				type: "checkbox"};
-fields['primary_nystagmus'].array = ['None','up-beating','down-beating','left-beating','right-beating','leftward torsion','rightward torsion'];
+fields['primary_nystagmus'].array = direction_list.concat(['None']);
 
 fields['primary_nystagmus_gp'] = 	{ label: "Nystagmus when looking straight ahead", 				type: "radio"};
 fields['primary_nystagmus_gp'].array = ['None','left-beating','right-beating','Other'];
 fields['primary_nystagmus_gp'].other = true;
 
 fields['gaze_evoked'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
-fields['gaze_evoked'].array = ['None','unidirectional','bidirectional'];
+fields['gaze_evoked'].array = ['None','Unidirectional','Bidirectional','Not Tested'];
 
 fields['gaze_evoked_gp'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
 fields['gaze_evoked_gp'].array = ['Yes','No'];
@@ -187,14 +185,14 @@ fields['hallpike_er'].array = ['Normal','Right Positive','Left Positive','Both S
 
 
 fields['hsaccades'] = 	{ label: "Horizontal Saccades", 			type: "radio"};
-fields['hsaccades'].array = ['Normal','Abnormal'];
+fields['hsaccades'].array = ['Normal','Abnormal','Not Tested'];
 fields['hsaccades'].other = true;
 
 fields['ino'] = 	{ label: "Internuclear Ophthalmoplegia (INO)", 			type: "radio"};
 fields['ino'].array = ['Right','Left','None','Not Tested'];
 
 fields['vsaccades'] = 	{ label: "Vertical Saccades", 			type: "radio"};
-fields['vsaccades'].array = ['Normal','Abnormal'];
+fields['vsaccades'].array = ['Normal','Abnormal','Not Tested'];
 fields['vsaccades'].other = true;
 
 fields['pursuit'] = 	{ label: "Smooth Pursuit", 			type: "radio"};
@@ -250,7 +248,7 @@ fields['limb_rleg_gp'] = 	{ label: "Right Leg Weakness", 				type: "radio"};
 fields['limb_rleg_gp'].array = ['present','absent'];
 
 fields['ataxia'] = 	{ label: "Limb Ataxia", 				type: "checkbox"};
-fields['ataxia'].array = ['None','Left arm','right arm','left leg','right leg','Not Tested'];
+fields['ataxia'].array = ['None','Left Arm','Right Arm','Left Leg','Right Leg','Not Tested'];
 
 fields['sensory_loss'] = 	{ label: "Sensory Loss", 				type: "radio"};
 fields['sensory_loss'].array = ['None','left patchy loss','left dense loss','right patchy loss','right dense loss','Not Tested'];
@@ -1010,6 +1008,7 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
+	
 	return "Test JSON String";
 }
 
@@ -1231,6 +1230,39 @@ console.log("getRadioVal: " + name);
 	return ""
 }
 
+var myConfirm_fnA = "";
+var myConfirm_fnB = "";
+
+function myConfirm(title,subtitle,a,b,fnA,fnB)
+{
+	myConfirm_fnA = fnA;
+	myConfirm_fnB = fnB;
+	document.getElementById('diag_title').innerHTML = title;
+	document.getElementById('diag_subtitle').innerHTML = subtitle;
+	document.getElementById('diag_btnA').innerHTML = a;
+	document.getElementById('diag_btnB').innerHTML = b;
+	document.getElementById('diag_id01').style.display='block';
+}
+
+function myConfirm_close()
+{
+	document.getElementById('diag_id01').style.display='none';
+	myConfirm_fnA = "";
+	myConfirm_fnB = "";
+}
+
+function myConfirm_optionA()
+{
+	if (myConfirm_fnA !== '') { myConfirm_fnA(); }
+	myConfirm_close();
+}
+
+function myConfirm_optionB()
+{
+	if (myConfirm_fnB !== '') { myConfirm_fnB(); }
+	myConfirm_close();
+}
+
 function submit() {	
 	$.post("json_transfer.pl",
 		{
@@ -1241,10 +1273,19 @@ function submit() {
 	);
 }
 
-function reset_event() {
+function submit_event() {
+
+	myConfirm("Submit Form","Are you sure you want to submit the form to Neurology?","Cancel","Yes",'',commit);
+}
+
+function reset_action() {
 	reset();
 	openScreen(false);
 	myAlert("Form Reset");
+}
+
+function reset_event() {
+	myConfirm("Reset Form","Are you sure you want to erase the form?","Cancel","Yes",'',reset_action);
 }
 
 function reset() {
