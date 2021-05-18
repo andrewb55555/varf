@@ -1,4 +1,5 @@
-var version = 10;
+var version = 11;
+
 
 var type = '';
 var title = "";
@@ -155,9 +156,10 @@ fields['nystagmus3'] = 	{ label: "Nystagmus", 				type: "nystagmus"};
 
 fields['primary_nystagmus'] = 	{ label: "Primary Position Spontaneous Nystagmus", 				type: "checkbox"};
 fields['primary_nystagmus'].array = direction_list.concat(['None']);
+fields['primary_nystagmus'].other = true;
 
 fields['primary_nystagmus_gp'] = 	{ label: "Nystagmus when looking straight ahead", 				type: "radio"};
-fields['primary_nystagmus_gp'].array = ['None','left-beating','right-beating','Other'];
+fields['primary_nystagmus_gp'].array = ['None','left-beating','right-beating'];
 fields['primary_nystagmus_gp'].other = true;
 
 fields['gaze_evoked'] = 	{ label: "Gaze-evoked Nystagmus", 				type: "radio"};
@@ -1008,7 +1010,8 @@ function aes_encrypt(message = '', key = ''){
 }
 
 function generateJSON() {
-	
+
+
 	return "Test JSON String";
 }
 
